@@ -68,7 +68,6 @@ public class Tecnico {
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
-    // --
     public boolean isObjectIntegrity() {
         return objectIntegrity;
     }

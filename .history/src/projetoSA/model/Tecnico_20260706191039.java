@@ -61,14 +61,12 @@ public class Tecnico {
     public void setSetor(String setor) {
         this.setor = setor;
     }
-    // --
     public String getTelefone() {
         return telefone;
     }
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
-    // --
     public boolean isObjectIntegrity() {
         return objectIntegrity;
     }

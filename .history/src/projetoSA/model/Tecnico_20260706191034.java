@@ -47,28 +47,24 @@ public class Tecnico {
     public void setNome(String nome) {
         this.nome = nome;
     }
-    // --
     public String getMatricula() {
         return matricula;
     }
     public void setMatricula(String matricula) {
         this.matricula = matricula;
     }
-    // --
     public String getSetor() {
         return setor;
     }
     public void setSetor(String setor) {
         this.setor = setor;
     }
-    // --
     public String getTelefone() {
         return telefone;
     }
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
-    // --
     public boolean isObjectIntegrity() {
         return objectIntegrity;
     }

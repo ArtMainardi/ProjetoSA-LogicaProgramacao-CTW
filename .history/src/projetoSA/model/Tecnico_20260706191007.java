@@ -33,46 +33,5 @@ public class Tecnico {
         this.telefone = telefone;
     }
 
-    // Getters e Setters:
-    public int getCodigo() {
-        return codigo;
-    }
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
-    }
-    // --
-    public String getNome() {
-        return nome;
-    }
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-    // --
-    public String getMatricula() {
-        return matricula;
-    }
-    public void setMatricula(String matricula) {
-        this.matricula = matricula;
-    }
-    // --
-    public String getSetor() {
-        return setor;
-    }
-    public void setSetor(String setor) {
-        this.setor = setor;
-    }
-    // --
-    public String getTelefone() {
-        return telefone;
-    }
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
-    }
-    // --
-    public boolean isObjectIntegrity() {
-        return objectIntegrity;
-    }
-    public void setObjectIntegrity(boolean objectIntegrity) {
-        this.objectIntegrity = objectIntegrity;
-    }
+    //
 }
