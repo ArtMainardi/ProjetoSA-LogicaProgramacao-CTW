@@ -9,12 +9,17 @@ public class Tecnico {
 
     // Construtor sem ID (cria um novo objeto):
     public Tecnico(String nome, String matricula, String setor, String telefone) {
-        this.nome = nome;
-        this.matricula = matricula;
-        this.setor = setor;
-        this.telefone = telefone;
+        try {
+            if(nome.trim().isEmpty() || matricula.trim().isEmpty() || setor.trim().isEmpty() || telefone.trim().isEmpty()){
+                throw new Exception("ERRO: não é permitido cadastrar técnicos com algum dado vazio!");
+            }
+            
+            objectIntegrity = true;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
-    // Construtor com ID (recebe um objeto já criado da lista):
+    // Construtor com ID (não precisa de verificação, pois recebe um objeto já criado da lista):
     public Tecnico(int codigo, String nome, String matricula, String setor, String telefone) {
         this.codigo = codigo;
         this.nome = nome;
@@ -57,5 +62,12 @@ public class Tecnico {
     }
     public void setTelefone(String telefone) {
         this.telefone = telefone;
+    }
+    // --
+    public boolean isObjectIntegrity() {
+        return objectIntegrity;
+    }
+    public void setObjectIntegrity(boolean objectIntegrity) {
+        this.objectIntegrity = objectIntegrity;
     }
 }

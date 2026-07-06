@@ -8,21 +8,29 @@ public class Equipamento {
     private String setorInstalado;
     private String dataInstalacao;
     private String status; // ('Operando', 'Em manutenção' ou 'Inativo')
+    // Verifica criação do objeto:
+    private boolean objectIntegrity = false;
 
     // Construtor sem ID (cria um novo objeto com o ID gerado pelo repository):
     public Equipamento(String nome, String categoria, String fabricante, String modelo,
             String setorInstalado, String dataInstalacao, String status) {
-        this.nome = nome;
-        this.categoria = categoria;
-        this.fabricante = fabricante;
-        this.modelo = modelo;
-        this.setorInstalado = setorInstalado;
-        this.dataInstalacao = dataInstalacao;
-        this.status = status;
+        try {
+            if(nome.trim().isEmpty() || categoria.trim().isEmpty() || fabricante.trim().isEmpty() || modelo.trim().isEmpty() || 
+                setorInstalado.trim().isEmpty() || dataInstalacao.trim().isEmpty() || status.trim().isEmpty()){
+                throw new Exception("ERRO: não é permitido cadastrar equipamentos com algum dado vazio!");
+            }
+            if(!status.equals("Operando") && !status.equals("Em manutenção") && !status.equals("Inativo")){
+                throw new Exception("ERRO: valor de 'status' inválido!");
+            }
+            
+            objectIntegrity = true;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
-    // Construtor com ID (recebe um objeto já criado da lista):
+    // Construtor com ID (não precisa de verificação, pois recebe um objeto já criado da lista):
     public Equipamento(int codigo, String nome, String categoria, String fabricante, String modelo,
-            String setorInstalado, String dataInstalacao, String status) {
+            String setorInstalado, String dataInstalacao, String status, boolean objectIntegrity) {
         this.codigo = codigo;
         this.nome = nome;
         this.categoria = categoria;
@@ -31,6 +39,7 @@ public class Equipamento {
         this.setorInstalado = setorInstalado;
         this.dataInstalacao = dataInstalacao;
         this.status = status;
+        this.objectIntegrity = objectIntegrity;
     }
 
     // Getters e Setters:
@@ -88,5 +97,12 @@ public class Equipamento {
     }
     public void setStatus(String status) {
         this.status = status;
+    }
+    // --
+    public boolean isObjectIntegrity() {
+        return objectIntegrity;
+    }
+    public void setObjectIntegrity(boolean objectIntegrity) {
+        this.objectIntegrity = objectIntegrity;
     }
 }

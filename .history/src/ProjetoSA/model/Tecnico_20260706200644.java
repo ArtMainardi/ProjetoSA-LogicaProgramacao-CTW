@@ -14,7 +14,7 @@ public class Tecnico {
         this.setor = setor;
         this.telefone = telefone;
     }
-    // Construtor com ID (recebe um objeto já criado da lista):
+    // Construtor com ID (não precisa de verificação, pois recebe um objeto já criado da lista):
     public Tecnico(int codigo, String nome, String matricula, String setor, String telefone) {
         this.codigo = codigo;
         this.nome = nome;
@@ -57,5 +57,12 @@ public class Tecnico {
     }
     public void setTelefone(String telefone) {
         this.telefone = telefone;
+    }
+    // --
+    public boolean isObjectIntegrity() {
+        return objectIntegrity;
+    }
+    public void setObjectIntegrity(boolean objectIntegrity) {
+        this.objectIntegrity = objectIntegrity;
     }
 }

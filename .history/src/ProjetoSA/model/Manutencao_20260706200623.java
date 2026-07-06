@@ -9,6 +9,8 @@ public class Manutencao {
     private String tipoManutencao; // (Preventiva ou Corretiva)
     private String descricao;
     private String situacao; // (Aberta, Em andamento ou Finalizada)
+    // Verifica criação do objeto:
+    private boolean objectIntegrity = false;
 
     // Construtor sem ID (cria um novo objeto com o ID gerado pelo repository):
     public Manutencao(Equipamento equipamento, Tecnico tecnico, String dataAbertura, String dataEncerramento,
@@ -23,7 +25,8 @@ public class Manutencao {
     }
     // Construtor com ID (recebe um objeto já criado da lista):
     public Manutencao(int codigo, Equipamento equipamento, Tecnico tecnico, String dataAbertura,
-            String dataEncerramento, String tipoManutencao, String descricao, String situacao) {
+            String dataEncerramento, String tipoManutencao, String descricao, String situacao,
+            boolean objectIntegrity) {
         this.codigo = codigo;
         this.equipamento = equipamento;
         this.tecnico = tecnico;
@@ -32,6 +35,7 @@ public class Manutencao {
         this.tipoManutencao = tipoManutencao;
         this.descricao = descricao;
         this.situacao = situacao;
+        this.objectIntegrity = objectIntegrity;
     }
 
     // Getters e Setters:

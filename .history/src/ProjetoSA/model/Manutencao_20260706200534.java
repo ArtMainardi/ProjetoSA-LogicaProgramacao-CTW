@@ -9,21 +9,39 @@ public class Manutencao {
     private String tipoManutencao; // (Preventiva ou Corretiva)
     private String descricao;
     private String situacao; // (Aberta, Em andamento ou Finalizada)
+    // Verifica criação do objeto:
+    private boolean objectIntegrity = false;
 
     // Construtor sem ID (cria um novo objeto com o ID gerado pelo repository):
     public Manutencao(Equipamento equipamento, Tecnico tecnico, String dataAbertura, String dataEncerramento,
             String tipoManutencao, String descricao, String situacao) {
-        this.equipamento = equipamento;
-        this.tecnico = tecnico;
-        this.dataAbertura = dataAbertura;
-        this.dataEncerramento = dataEncerramento;
-        this.tipoManutencao = tipoManutencao;
-        this.descricao = descricao;
-        this.situacao = situacao;
+        try {
+            if(!equipamento.){ 
+                throw new Exception("ERRO: não é permitido cadastrar uma manutenção para um equipamento inexistente!");
+            }
+            if(!tecnico.isObjectIntegrity()){
+                throw new Exception("ERRO: não é permitido cadastrar uma manutenção para um técnico inexistente!");
+            }
+            if(equipamento.getStatus().equals("Em manutenção")){
+                throw new Exception("ERRO: um equipamento que possui uma manutenção aberta não pode receber uma nova manutenção!");
+            }
+            this.equipamento = equipamento;
+            this.tecnico = tecnico;
+            this.dataAbertura = dataAbertura;
+            this.dataEncerramento = dataEncerramento;
+            this.tipoManutencao = tipoManutencao;
+            this.descricao = descricao;
+            this.situacao = situacao;
+            objectIntegrity = true;
+            equipamento.setStatus("Em manutenção");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
-    // Construtor com ID (recebe um objeto já criado da lista):
+    // Construtor com ID (não precisa de verificação, pois recebe um objeto já criado da lista):
     public Manutencao(int codigo, Equipamento equipamento, Tecnico tecnico, String dataAbertura,
-            String dataEncerramento, String tipoManutencao, String descricao, String situacao) {
+            String dataEncerramento, String tipoManutencao, String descricao, String situacao,
+            boolean objectIntegrity) {
         this.codigo = codigo;
         this.equipamento = equipamento;
         this.tecnico = tecnico;
@@ -32,6 +50,7 @@ public class Manutencao {
         this.tipoManutencao = tipoManutencao;
         this.descricao = descricao;
         this.situacao = situacao;
+        this.objectIntegrity = objectIntegrity;
     }
 
     // Getters e Setters:
@@ -89,5 +108,12 @@ public class Manutencao {
     }
     public void setSituacao(String situacao) {
         this.situacao = situacao;
+    }
+    // --
+    public boolean isObjectIntegrity() {
+        return objectIntegrity;
+    }
+    public void setObjectIntegrity(boolean objectIntegrity) {
+        this.objectIntegrity = objectIntegrity;
     }
 }

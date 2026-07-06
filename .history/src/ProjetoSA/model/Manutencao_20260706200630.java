@@ -9,6 +9,8 @@ public class Manutencao {
     private String tipoManutencao; // (Preventiva ou Corretiva)
     private String descricao;
     private String situacao; // (Aberta, Em andamento ou Finalizada)
+    // Verifica criação do objeto:
+    private boolean objectIntegrity = false;
 
     // Construtor sem ID (cria um novo objeto com o ID gerado pelo repository):
     public Manutencao(Equipamento equipamento, Tecnico tecnico, String dataAbertura, String dataEncerramento,

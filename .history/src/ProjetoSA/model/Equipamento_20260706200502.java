@@ -22,7 +22,7 @@ public class Equipamento {
     }
     // Construtor com ID (recebe um objeto já criado da lista):
     public Equipamento(int codigo, String nome, String categoria, String fabricante, String modelo,
-            String setorInstalado, String dataInstalacao, String status) {
+            String setorInstalado, String dataInstalacao, String status, boolean objectIntegrity) {
         this.codigo = codigo;
         this.nome = nome;
         this.categoria = categoria;
@@ -88,5 +88,12 @@ public class Equipamento {
     }
     public void setStatus(String status) {
         this.status = status;
+    }
+    // --
+    public boolean isObjectIntegrity() {
+        return objectIntegrity;
+    }
+    public void setObjectIntegrity(boolean objectIntegrity) {
+        this.objectIntegrity = objectIntegrity;
     }
 }

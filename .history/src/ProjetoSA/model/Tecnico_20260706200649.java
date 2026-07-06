@@ -58,4 +58,11 @@ public class Tecnico {
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
+    // --
+    public boolean isObjectIntegrity() {
+        return objectIntegrity;
+    }
+    public void setObjectIntegrity(boolean objectIntegrity) {
+        this.objectIntegrity = objectIntegrity;
+    }
 }
