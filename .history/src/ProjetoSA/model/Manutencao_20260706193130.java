@@ -17,14 +17,12 @@ public class Manutencao {
             String tipoManutencao, String descricao, String situacao) {
         try {
             if(!equipamento.isObjectIntegrity()){ 
-                throw new Exception("ERRO: não é permitido cadastrar uma manutenção para um equipamento inexistente!");
+                throw new Exception("ERRO: não é permitido cadastrar uma manutenção para um equipamento inexistente");
             }
             if(!tecnico.isObjectIntegrity()){
-                throw new Exception("ERRO: não é permitido cadastrar uma manutenção para um técnico inexistente!");
+                throw new Exception("ERRO: não é permitido cadastrar uma manutenção para um técnico inexistente");
             }
-            if(equipamento.getStatus().equals("Em manutenção")){
-                throw new Exception("ERRO: um equipamento que possui uma manutenção aberta não pode receber uma nova manutenção!");
-            }
+            if(equipamento.getStatus().equals("tecnico"))
             this.equipamento = equipamento;
             this.tecnico = tecnico;
             this.dataAbertura = dataAbertura;
@@ -33,23 +31,8 @@ public class Manutencao {
             this.descricao = descricao;
             this.situacao = situacao;
             objectIntegrity = true;
-            equipamento.setStatus("Em manutenção");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-    }
-    // Construtor com ID (não precisa de verificação, pois recebe um objeto já criado da lista):
-    public Manutencao(int codigo, Equipamento equipamento, Tecnico tecnico, String dataAbertura,
-            String dataEncerramento, String tipoManutencao, String descricao, String situacao,
-            boolean objectIntegrity) {
-        this.codigo = codigo;
-        this.equipamento = equipamento;
-        this.tecnico = tecnico;
-        this.dataAbertura = dataAbertura;
-        this.dataEncerramento = dataEncerramento;
-        this.tipoManutencao = tipoManutencao;
-        this.descricao = descricao;
-        this.situacao = situacao;
-        this.objectIntegrity = objectIntegrity;
     }
 }

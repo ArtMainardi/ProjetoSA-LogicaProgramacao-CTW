@@ -7,7 +7,7 @@ public class Tecnico {
     private String setor;
     private String telefone;
     // Verifica criação do objeto:
-    private boolean objectIntegrity = false;
+    private boolean objectIntegrity = true;
 
     // Construtor sem ID (cria um novo objeto):
     public Tecnico(String nome, String matricula, String setor, String telefone) {
@@ -19,7 +19,7 @@ public class Tecnico {
             this.matricula = matricula;
             this.setor = setor;
             this.telefone = telefone;
-            objectIntegrity = true;
+            objectIntegrity = false;
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

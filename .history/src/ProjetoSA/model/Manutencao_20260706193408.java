@@ -52,4 +52,5 @@ public class Manutencao {
         this.situacao = situacao;
         this.objectIntegrity = objectIntegrity;
     }
+    
 }

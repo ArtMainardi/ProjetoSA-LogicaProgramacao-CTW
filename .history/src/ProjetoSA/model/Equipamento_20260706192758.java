@@ -29,7 +29,7 @@ public class Equipamento {
             this.setorInstalado = setorInstalado;
             this.dataInstalacao = dataInstalacao;
             this.status = status;
-            objectIntegrity = true;
+            objectIntegrity = false;
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

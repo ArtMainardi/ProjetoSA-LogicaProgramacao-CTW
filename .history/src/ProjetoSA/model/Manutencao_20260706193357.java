@@ -39,17 +39,4 @@ public class Manutencao {
         }
     }
     // Construtor com ID (não precisa de verificação, pois recebe um objeto já criado da lista):
-    public Manutencao(int codigo, Equipamento equipamento, Tecnico tecnico, String dataAbertura,
-            String dataEncerramento, String tipoManutencao, String descricao, String situacao,
-            boolean objectIntegrity) {
-        this.codigo = codigo;
-        this.equipamento = equipamento;
-        this.tecnico = tecnico;
-        this.dataAbertura = dataAbertura;
-        this.dataEncerramento = dataEncerramento;
-        this.tipoManutencao = tipoManutencao;
-        this.descricao = descricao;
-        this.situacao = situacao;
-        this.objectIntegrity = objectIntegrity;
-    }
 }
