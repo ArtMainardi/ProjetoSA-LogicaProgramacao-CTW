@@ -109,7 +109,6 @@ public class Manutencao {
     public void setSituacao(String situacao) {
         this.situacao = situacao;
     }
-    // --
     public boolean isObjectIntegrity() {
         return objectIntegrity;
     }

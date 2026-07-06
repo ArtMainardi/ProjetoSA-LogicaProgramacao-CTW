@@ -81,35 +81,30 @@ public class Manutencao {
     public void setDataAbertura(String dataAbertura) {
         this.dataAbertura = dataAbertura;
     }
-    // --
     public String getDataEncerramento() {
         return dataEncerramento;
     }
     public void setDataEncerramento(String dataEncerramento) {
         this.dataEncerramento = dataEncerramento;
     }
-    // --
     public String getTipoManutencao() {
         return tipoManutencao;
     }
     public void setTipoManutencao(String tipoManutencao) {
         this.tipoManutencao = tipoManutencao;
     }
-    // --
     public String getDescricao() {
         return descricao;
     }
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-    // --
     public String getSituacao() {
         return situacao;
     }
     public void setSituacao(String situacao) {
         this.situacao = situacao;
     }
-    // --
     public boolean isObjectIntegrity() {
         return objectIntegrity;
     }
