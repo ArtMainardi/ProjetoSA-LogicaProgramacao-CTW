@@ -29,9 +29,9 @@ public class Equipamento {
             this.setorInstalado = setorInstalado;
             this.dataInstalacao = dataInstalacao;
             this.status = status;
-            objectIntegrity = true;
         } catch (Exception e) {
             System.out.println(e.getMessage());
+            objectIntegrity = false;
         }
     }
     // Construtor com ID (não precisa de verificação, pois recebe um objeto já criado da lista):
