@@ -81,7 +81,6 @@ public class Equipamento {
     public void setDataInstalacao(String dataInstalacao) {
         this.dataInstalacao = dataInstalacao;
     }
-    // --
     public String getStatus() {
         return status;
     }

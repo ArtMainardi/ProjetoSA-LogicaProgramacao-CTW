@@ -67,21 +67,18 @@ public class Equipamento {
     public void setModelo(String modelo) {
         this.modelo = modelo;
     }
-    // --
     public String getSetorInstalado() {
         return setorInstalado;
     }
     public void setSetorInstalado(String setorInstalado) {
         this.setorInstalado = setorInstalado;
     }
-    // --
     public String getDataInstalacao() {
         return dataInstalacao;
     }
     public void setDataInstalacao(String dataInstalacao) {
         this.dataInstalacao = dataInstalacao;
     }
-    // --
     public String getStatus() {
         return status;
     }

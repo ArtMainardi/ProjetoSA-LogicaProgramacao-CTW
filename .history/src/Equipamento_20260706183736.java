@@ -32,60 +32,8 @@ public class Equipamento {
         }
     }
 
+    
+
     // Getters e Setters:
-    public int getCodigo() {
-        return codigo;
-    }
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
-    }
-    // --
-    public String getNome() {
-        return nome;
-    }
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-    // --
-    public String getCategoria() {
-        return categoria;
-    }
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
-    }
-    // --
-    public String getFabricante() {
-        return fabricante;
-    }
-    public void setFabricante(String fabricante) {
-        this.fabricante = fabricante;
-    }
-    // --
-    public String getModelo() {
-        return modelo;
-    }
-    public void setModelo(String modelo) {
-        this.modelo = modelo;
-    }
-    // --
-    public String getSetorInstalado() {
-        return setorInstalado;
-    }
-    public void setSetorInstalado(String setorInstalado) {
-        this.setorInstalado = setorInstalado;
-    }
-    // --
-    public String getDataInstalacao() {
-        return dataInstalacao;
-    }
-    public void setDataInstalacao(String dataInstalacao) {
-        this.dataInstalacao = dataInstalacao;
-    }
-    // --
-    public String getStatus() {
-        return status;
-    }
-    public void setStatus(String status) {
-        this.status = status;
-    }
+    
 }
