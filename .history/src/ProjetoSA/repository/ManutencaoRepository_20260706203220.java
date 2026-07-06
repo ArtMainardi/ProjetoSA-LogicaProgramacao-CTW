@@ -1,0 +1,9 @@
+package projetoSA.repository;
+
+import java.util.ArrayList;
+
+import projetoSA.model.Manutencao;
+
+public class ManutencaoRepository {
+    ArrayList<Manutencao>
+}
