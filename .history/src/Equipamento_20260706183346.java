@@ -16,9 +16,6 @@ public class Equipamento {
                 setorInstalado.length() == 0 || dataInstalacao.length() == 0 || status.length() == 0){
                 throw new Exception("ERRO: não é permitido cadastrar equipamentos com algum dado vazio!");
             }
-            if(!status.equals("Operando") && !status.equals("Em manutenção") && !status.equals("Inativo")){
-                throw new Exception("ERRO: valor de 'status' inválido!");
-            }
             this.codigo = codigo;
             this.nome = nome;
             this.categoria = categoria;
@@ -26,6 +23,7 @@ public class Equipamento {
             this.modelo = modelo;
             this.setorInstalado = setorInstalado;
             this.dataInstalacao = dataInstalacao;
+            if(!status.equals("Operando") && !status.equals("Em manutenção") && !status.equals("Operando"))
             this.status = status;
         } catch (Exception e) {
             System.out.println(e.getMessage());

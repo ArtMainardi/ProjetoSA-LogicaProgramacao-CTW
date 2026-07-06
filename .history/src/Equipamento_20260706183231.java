@@ -14,10 +14,7 @@ public class Equipamento {
         try {
             if(nome.length() == 0 || categoria.length() == 0 || fabricante.length() == 0 || modelo.length() == 0 || 
                 setorInstalado.length() == 0 || dataInstalacao.length() == 0 || status.length() == 0){
-                throw new Exception("ERRO: não é permitido cadastrar equipamentos com algum dado vazio!");
-            }
-            if(!status.equals("Operando") && !status.equals("Em manutenção") && !status.equals("Inativo")){
-                throw new Exception("ERRO: valor de 'status' inválido!");
+                throw new Exception("ERRO: Não será permitido cadastrar equipamentos com campos obrigatórios vazios");
             }
             this.codigo = codigo;
             this.nome = nome;
