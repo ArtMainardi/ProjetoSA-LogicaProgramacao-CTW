@@ -11,8 +11,8 @@ public class Equipamento {
     // Verifica criação do objeto:
     private boolean objectIntegrity = true;
 
-    // Construtor sem ID (cria um novo objeto com o ID gerado pelo repository):
-    public Equipamento(String nome, String categoria, String fabricante, String modelo,
+    // Construtor sem ID (cria um novo objeto):
+    public Equipamento(int codigo, String nome, String categoria, String fabricante, String modelo,
             String setorInstalado, String dataInstalacao, String status) {
         try {
             if(nome.trim().isEmpty() || categoria.trim().isEmpty() || fabricante.trim().isEmpty() || modelo.trim().isEmpty() || 
@@ -22,6 +22,7 @@ public class Equipamento {
             if(!status.equals("Operando") && !status.equals("Em manutenção") && !status.equals("Inativo")){
                 throw new Exception("ERRO: valor de 'status' inválido!");
             }
+            this.codigo = codigo;
             this.nome = nome;
             this.categoria = categoria;
             this.fabricante = fabricante;
@@ -34,19 +35,7 @@ public class Equipamento {
             objectIntegrity = false;
         }
     }
-    // Construtor com ID (não precisa de verificação, pois recebe um objeto já criado da lista):
-    public Equipamento(int codigo, String nome, String categoria, String fabricante, String modelo,
-            String setorInstalado, String dataInstalacao, String status, boolean objectIntegrity) {
-        this.codigo = codigo;
-        this.nome = nome;
-        this.categoria = categoria;
-        this.fabricante = fabricante;
-        this.modelo = modelo;
-        this.setorInstalado = setorInstalado;
-        this.dataInstalacao = dataInstalacao;
-        this.status = status;
-        this.objectIntegrity = objectIntegrity;
-    }
+    // COnst
 
     // Getters e Setters:
     public int getCodigo() {

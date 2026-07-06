@@ -11,7 +11,7 @@ public class Equipamento {
     // Verifica criação do objeto:
     private boolean objectIntegrity = true;
 
-    // Construtor sem ID (cria um novo objeto com o ID gerado pelo repository):
+    // Construtor sem ID (cria um novo objeto, com o ID ):
     public Equipamento(String nome, String categoria, String fabricante, String modelo,
             String setorInstalado, String dataInstalacao, String status) {
         try {
