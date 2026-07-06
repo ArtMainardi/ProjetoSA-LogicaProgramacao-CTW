@@ -92,10 +92,13 @@ public class Equipamento {
         this.status = status;
     }
     // --
+
     public boolean isObjectIntegrity() {
         return objectIntegrity;
     }
+
     public void setObjectIntegrity(boolean objectIntegrity) {
         this.objectIntegrity = objectIntegrity;
     }
+    
 }

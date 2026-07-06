@@ -7,10 +7,9 @@ public class Equipamento {
     private String setorInstalado;
     private String dataInstalacao;
     private String status; // ('Operando', 'Em manutenção' ou 'Inativo')
-    // Verifica criação do objeto:
-    private boolean objectIntegrity = true;
 
     // Construtor:
+    private boolean objectIntegrity = true
     public Equipamento(int codigo, String nome, String categoria, String fabricante, String modelo,
             String setorInstalado, String dataInstalacao, String status) {
         try {
@@ -31,7 +30,6 @@ public class Equipamento {
             this.status = status;
         } catch (Exception e) {
             System.out.println(e.getMessage());
-            objectIntegrity = false;
         }
     }
 
@@ -90,12 +88,5 @@ public class Equipamento {
     }
     public void setStatus(String status) {
         this.status = status;
-    }
-    // --
-    public boolean isObjectIntegrity() {
-        return objectIntegrity;
-    }
-    public void setObjectIntegrity(boolean objectIntegrity) {
-        this.objectIntegrity = objectIntegrity;
     }
 }

@@ -91,11 +91,4 @@ public class Equipamento {
     public void setStatus(String status) {
         this.status = status;
     }
-    // --
-    public boolean isObjectIntegrity() {
-        return objectIntegrity;
-    }
-    public void setObjectIntegrity(boolean objectIntegrity) {
-        this.objectIntegrity = objectIntegrity;
-    }
 }
