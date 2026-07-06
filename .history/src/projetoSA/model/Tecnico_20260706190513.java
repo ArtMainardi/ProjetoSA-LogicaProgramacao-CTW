@@ -6,9 +6,7 @@ public class Tecnico {
     private String matricula;
     private String setor;
     private String telefone;
-    // Verifica criação do objeto:
-    private boolean objectIntegrity = true;
-
+    /
     // Construtor sem ID (cria um novo objeto):
     public Tecnico(String nome, String matricula, String setor, String telefone) {
         try {
@@ -20,8 +18,6 @@ public class Tecnico {
             this.setor = setor;
             this.telefone = telefone;
         } catch (Exception e) {
-            System.out.println(e.getMessage());
-            objectIntegrity = false;
         }
     }
     // Construtor com ID (não precisa de verificação, pois recebe um objeto já criado da lista):

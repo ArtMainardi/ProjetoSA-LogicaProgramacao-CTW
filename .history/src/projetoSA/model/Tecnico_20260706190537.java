@@ -21,7 +21,6 @@ public class Tecnico {
             this.telefone = telefone;
         } catch (Exception e) {
             System.out.println(e.getMessage());
-            objectIntegrity = false;
         }
     }
     // Construtor com ID (não precisa de verificação, pois recebe um objeto já criado da lista):
