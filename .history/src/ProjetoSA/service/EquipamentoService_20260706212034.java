@@ -20,9 +20,7 @@ public class EquipamentoService {
                     newEquipamento.getDataInstalacao().trim().isEmpty() || newEquipamento.getStatus().trim().isEmpty()){
                 throw new Exception("ERRO: não é permitido cadastrar equipamentos com algum dado vazio!");
             }
-            if(!status.equals("Operando") && !status.equals("Operando") && !status.equals("Operando")){
-                throw new Exception("ERRO: valor de 'status' inválido!");
-            }
+            if(!newEquipamento.getStatus().equals("Operando") && !newEquipamento.getStatus().equals("Operando") && !newEquipamento.getStatus().equals("Operando"))
             Equipamento equipamento = service.create(newEquipamento);
             return equipamento;
         } catch (Exception e) {

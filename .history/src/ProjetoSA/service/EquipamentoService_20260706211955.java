@@ -13,16 +13,13 @@ public class EquipamentoService {
 
     // Adicionar:
     public Equipamento adicionar(Equipamento newEquipamento){
-        String status = newEquipamento.getStatus();
         try {
             if(newEquipamento.getNome().trim().isEmpty() || newEquipamento.getCategoria().trim().isEmpty() || newEquipamento.getFabricante().trim().isEmpty() || 
                     newEquipamento.getModelo().trim().isEmpty() || newEquipamento.getSetorInstalado().trim().isEmpty() || 
                     newEquipamento.getDataInstalacao().trim().isEmpty() || newEquipamento.getStatus().trim().isEmpty()){
                 throw new Exception("ERRO: não é permitido cadastrar equipamentos com algum dado vazio!");
             }
-            if(!status.equals("Operando") && !status.equals("Operando") && !status.equals("Operando")){
-                throw new Exception("ERRO: valor de 'status' inválido!");
-            }
+            if(!newEquipamento.getStatus().equals("Operando") )
             Equipamento equipamento = service.create(newEquipamento);
             return equipamento;
         } catch (Exception e) {

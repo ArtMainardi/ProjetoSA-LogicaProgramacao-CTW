@@ -21,7 +21,7 @@ public class EquipamentoService {
                 throw new Exception("ERRO: não é permitido cadastrar equipamentos com algum dado vazio!");
             }
             if(!status.equals("Operando") && !status.equals("Operando") && !status.equals("Operando")){
-                throw new Exception("ERRO: valor de 'status' inválido!");
+                
             }
             Equipamento equipamento = service.create(newEquipamento);
             return equipamento;
