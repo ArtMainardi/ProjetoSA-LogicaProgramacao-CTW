@@ -1,6 +1,5 @@
 package projetoSA.service;
 
-import java.util.List;
 import projetoSA.model.Equipamento;
 import projetoSA.repository.EquipamentoRepository;
 
@@ -32,8 +31,5 @@ public class EquipamentoService {
         }
     }
 
-    // Listar:
-    public List<Equipamento> listar(){
-        return service.read();
-    }
+    // 
 }
