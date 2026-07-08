@@ -59,8 +59,6 @@ public class EquipamentoService {
             throw new RuntimeException("ERRO: valor de 'status' inválido!");
         }
 
-        // Atualiza:
-        modifiedEquipamento.setCodigo(id);
-        return repository.update(modifiedEquipamento);
+        
     }
 }

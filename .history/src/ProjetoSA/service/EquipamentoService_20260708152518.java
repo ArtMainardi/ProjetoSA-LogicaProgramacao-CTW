@@ -42,25 +42,5 @@ public class EquipamentoService {
     }
 
     // Atualizar:
-    public Equipamento atualizar(Equipamento modifiedEquipamento, int id){
-        // Verifica se encontrou o equipamento com esse id:
-        if(repository.readId(id) == null){
-            throw new RuntimeException("ERRO: equipamento com esse ID não encontrado!");
-        }
-
-        // Verifica dados:
-        String status = modifiedEquipamento.getStatus();
-        if(modifiedEquipamento.getNome().trim().isEmpty() || modifiedEquipamento.getCategoria().trim().isEmpty() || modifiedEquipamento.getFabricante().trim().isEmpty() || 
-                modifiedEquipamento.getModelo().trim().isEmpty() || modifiedEquipamento.getSetorInstalado().trim().isEmpty() || 
-                modifiedEquipamento.getDataInstalacao().trim().isEmpty() || modifiedEquipamento.getStatus().trim().isEmpty()){
-            throw new RuntimeException("ERRO: não é permitido cadastrar equipamentos com algum dado vazio!");
-        }
-        if(!status.equals("Operando") && !status.equals("Operando") && !status.equals("Operando")){
-            throw new RuntimeException("ERRO: valor de 'status' inválido!");
-        }
-
-        // Atualiza:
-        modifiedEquipamento.setCodigo(id);
-        return repository.update(modifiedEquipamento);
-    }
+    public Equipamento atualizar(Equipamento modifiedEquipamento, int id)
 }

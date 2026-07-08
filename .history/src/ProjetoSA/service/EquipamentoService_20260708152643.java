@@ -49,18 +49,14 @@ public class EquipamentoService {
         }
 
         // Verifica dados:
-        String status = modifiedEquipamento.getStatus();
-        if(modifiedEquipamento.getNome().trim().isEmpty() || modifiedEquipamento.getCategoria().trim().isEmpty() || modifiedEquipamento.getFabricante().trim().isEmpty() || 
-                modifiedEquipamento.getModelo().trim().isEmpty() || modifiedEquipamento.getSetorInstalado().trim().isEmpty() || 
-                modifiedEquipamento.getDataInstalacao().trim().isEmpty() || modifiedEquipamento.getStatus().trim().isEmpty()){
+        String status = newEquipamento.getStatus();
+        if(newEquipamento.getNome().trim().isEmpty() || newEquipamento.getCategoria().trim().isEmpty() || newEquipamento.getFabricante().trim().isEmpty() || 
+                newEquipamento.getModelo().trim().isEmpty() || newEquipamento.getSetorInstalado().trim().isEmpty() || 
+                newEquipamento.getDataInstalacao().trim().isEmpty() || newEquipamento.getStatus().trim().isEmpty()){
             throw new RuntimeException("ERRO: não é permitido cadastrar equipamentos com algum dado vazio!");
         }
         if(!status.equals("Operando") && !status.equals("Operando") && !status.equals("Operando")){
             throw new RuntimeException("ERRO: valor de 'status' inválido!");
         }
-
-        // Atualiza:
-        modifiedEquipamento.setCodigo(id);
-        return repository.update(modifiedEquipamento);
     }
 }

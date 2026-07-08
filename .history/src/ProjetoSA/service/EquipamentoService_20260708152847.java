@@ -61,6 +61,6 @@ public class EquipamentoService {
 
         // Atualiza:
         modifiedEquipamento.setCodigo(id);
-        return repository.update(modifiedEquipamento);
+        return repository.update(modifiedEquipamento)
     }
 }

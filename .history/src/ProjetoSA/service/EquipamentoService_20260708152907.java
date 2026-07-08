@@ -10,7 +10,6 @@ public class EquipamentoService {
     // Adicionar:
     public Equipamento adicionar(Equipamento newEquipamento){
         String status = newEquipamento.getStatus();
-        
         if(newEquipamento.getNome().trim().isEmpty() || newEquipamento.getCategoria().trim().isEmpty() || newEquipamento.getFabricante().trim().isEmpty() || 
                 newEquipamento.getModelo().trim().isEmpty() || newEquipamento.getSetorInstalado().trim().isEmpty() || 
                 newEquipamento.getDataInstalacao().trim().isEmpty() || newEquipamento.getStatus().trim().isEmpty()){
