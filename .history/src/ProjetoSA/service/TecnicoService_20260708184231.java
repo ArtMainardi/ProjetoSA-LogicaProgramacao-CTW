@@ -58,25 +58,6 @@ public class TecnicoService {
 
     // Atualizar:
     public Tecnico atualizar(Tecnico newTecnico, int id){
-        // Verifica se encontrou um dado:
-        Tecnico tecnico = repository.readId(id);
-        if(tecnico == null){
-            throw new RuntimeException("ERRO: nenhum técnico com esse ID encontrado!");
-        }
-
-        // Verifica dados:
-        if(newTecnico.getNome().trim().isEmpty() || newTecnico.getMatricula().trim().isEmpty() || 
-                newTecnico.getSetor().trim().isEmpty() || newTecnico.getTelefone().trim().isEmpty()){
-            throw new RuntimeException("ERRO: não é permitido cadastrar técnicos com algum dado vazio!");
-        }
-
-        // Verificando uniquidade de 'matricula':
-        if(repository.readMatricula(newTecnico.getMatricula()).getCodigo() != id){
-            throw new RuntimeException("ERRO: já existe um técnico com essa matrícula!");
-        }
-
-        // Atualizando:
-        newTecnico.setCodigo(id);
-        return repository.update(newTecnico);
+        
     }
 }

@@ -71,12 +71,11 @@ public class TecnicoService {
         }
 
         // Verificando uniquidade de 'matricula':
-        if(repository.readMatricula(newTecnico.getMatricula()).getCodigo() != id){
+        if(repository.readMatricula(newTecnico.getMatricula()).getCodigo()){
             throw new RuntimeException("ERRO: já existe um técnico com essa matrícula!");
         }
 
         // Atualizando:
-        newTecnico.setCodigo(id);
-        return repository.update(newTecnico);
+        newTecnico
     }
 }

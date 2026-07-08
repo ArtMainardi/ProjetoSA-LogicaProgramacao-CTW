@@ -77,6 +77,5 @@ public class TecnicoService {
 
         // Atualizando:
         newTecnico.setCodigo(id);
-        return repository.update(newTecnico);
     }
 }
