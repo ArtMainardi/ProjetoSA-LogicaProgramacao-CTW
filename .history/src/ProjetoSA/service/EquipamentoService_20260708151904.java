@@ -27,7 +27,7 @@ public class EquipamentoService {
     public List<Equipamento> listar(){
         List<Equipamento> equipamentos = repository.read();
         if(equipamentos.isEmpty()){
-            throw new RuntimeException("Nenhum equipamento salvo!");
+            throw new RuntimeException("Nenhum ");
         }
         return equipamentos;
     }
