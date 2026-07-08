@@ -5,7 +5,7 @@ import projetoSA.model.Equipamento;
 import projetoSA.repository.EquipamentoRepository;
 
 public class EquipamentoService {
-    private EquipamentoRepository repository = new EquipamentoRepository();
+    private EquipamentoRepository service = new Eq;
 
     // Adicionar:
     public Equipamento adicionar(Equipamento newEquipamento){
@@ -19,7 +19,7 @@ public class EquipamentoService {
             if(!status.equals("Operando") && !status.equals("Operando") && !status.equals("Operando")){
                 throw new Exception("ERRO: valor de 'status' inválido!");
             }
-            Equipamento equipamento = repository.create(newEquipamento);
+            Equipamento equipamento = service.create(newEquipamento);
             return equipamento;
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -29,6 +29,6 @@ public class EquipamentoService {
 
     // Listar:
     public List<Equipamento> listar(){
-        return repository.read();
+        return service.read();
     }
 }
