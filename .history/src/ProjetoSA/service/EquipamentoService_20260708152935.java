@@ -9,7 +9,7 @@ public class EquipamentoService {
 
     // Adicionar:
     public Equipamento adicionar(Equipamento newEquipamento){
-        // Verifica dados:
+        
         String status = newEquipamento.getStatus();
         if(newEquipamento.getNome().trim().isEmpty() || newEquipamento.getCategoria().trim().isEmpty() || newEquipamento.getFabricante().trim().isEmpty() || 
                 newEquipamento.getModelo().trim().isEmpty() || newEquipamento.getSetorInstalado().trim().isEmpty() || 
@@ -19,8 +19,6 @@ public class EquipamentoService {
         if(!status.equals("Operando") && !status.equals("Operando") && !status.equals("Operando")){
             throw new RuntimeException("ERRO: valor de 'status' inválido!");
         }
-
-        // Cria:
         Equipamento equipamento = repository.create(newEquipamento);
         return equipamento;
     }

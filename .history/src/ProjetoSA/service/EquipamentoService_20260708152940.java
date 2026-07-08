@@ -19,8 +19,6 @@ public class EquipamentoService {
         if(!status.equals("Operando") && !status.equals("Operando") && !status.equals("Operando")){
             throw new RuntimeException("ERRO: valor de 'status' inválido!");
         }
-
-        // Cria:
         Equipamento equipamento = repository.create(newEquipamento);
         return equipamento;
     }
