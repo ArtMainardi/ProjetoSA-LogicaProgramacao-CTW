@@ -73,6 +73,6 @@ public class EquipamentoService {
             throw new RuntimeException("ERRO: equipamento com esse ID não encontrado!");
         }
 
-        repository.delete(id);
+        
     }
 }

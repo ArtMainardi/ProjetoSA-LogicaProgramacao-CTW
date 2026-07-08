@@ -67,12 +67,5 @@ public class EquipamentoService {
     }
 
     // Deletar:
-    public void deletar(int id){
-        // Verifica se encontrou o equipamento com esse id:
-        if(repository.readId(id) == null){
-            throw new RuntimeException("ERRO: equipamento com esse ID não encontrado!");
-        }
-
-        repository.delete(id);
-    }
+    public 
 }

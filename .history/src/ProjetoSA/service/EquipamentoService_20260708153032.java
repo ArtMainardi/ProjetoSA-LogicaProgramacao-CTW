@@ -72,7 +72,5 @@ public class EquipamentoService {
         if(repository.readId(id) == null){
             throw new RuntimeException("ERRO: equipamento com esse ID não encontrado!");
         }
-
-        repository.delete(id);
     }
 }
