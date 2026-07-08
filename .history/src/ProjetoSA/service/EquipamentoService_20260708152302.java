@@ -38,6 +38,5 @@ public class EquipamentoService {
         if(equipamento == null){
             throw new RuntimeException("ERRO: equipamento com esse ID não encontrado!");
         }
-        return equipamento;
     }
 }

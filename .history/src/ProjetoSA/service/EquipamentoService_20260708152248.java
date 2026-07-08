@@ -36,8 +36,7 @@ public class EquipamentoService {
     public Equipamento buscarId(int id){
         Equipamento equipamento = repository.readId(id);
         if(equipamento == null){
-            throw new RuntimeException("ERRO: equipamento com esse ID não encontrado!");
+            throw new RuntimeException();
         }
-        return equipamento;
     }
 }
