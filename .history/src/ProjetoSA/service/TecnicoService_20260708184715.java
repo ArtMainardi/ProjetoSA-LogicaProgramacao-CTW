@@ -87,6 +87,7 @@ public class TecnicoService {
         if(tecnico == null){
             throw new RuntimeException("ERRO: nenhum técnico com esse ID encontrado!");
         }
+
         repository.delete(id);
     }
 }

@@ -82,11 +82,6 @@ public class TecnicoService {
 
     // Deletar:
     public void deletar(int id){
-        // Verifica se encontrou um dado:
-        Tecnico tecnico = repository.readId(id);
-        if(tecnico == null){
-            throw new RuntimeException("ERRO: nenhum técnico com esse ID encontrado!");
-        }
-        repository.delete(id);
+        
     }
 }
