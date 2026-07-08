@@ -57,7 +57,7 @@ public class EquipamentoService {
                 modifiedEquipamento.getDataInstalacao().trim().isEmpty() || modifiedEquipamento.getStatus().trim().isEmpty()){
             throw new RuntimeException("ERRO: não é permitido cadastrar equipamentos com algum dado vazio!");
         }
-        if(!status.equals("Operando") && !status.equals("Em manutenção") && !status.equals("Inativo")){
+        if(!status.equals("Operando") && !status.equals("Em manutenção") && !status.equals("Operando")){
             throw new RuntimeException("ERRO: valor de 'status' inválido!");
         }
 
