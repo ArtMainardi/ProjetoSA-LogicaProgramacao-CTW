@@ -57,7 +57,7 @@ public class EquipamentoService {
                 modifiedEquipamento.getDataInstalacao().trim().isEmpty() || modifiedEquipamento.getStatus().trim().isEmpty()){
             throw new RuntimeException("ERRO: não é permitido cadastrar equipamentos com algum dado vazio!");
         }
-        if(!status.equals("Operando") && !status.equals("Operando") && !status.equals("Operando")){
+        if(!status.equals("Operando") && !status.equals("Em manutenção") && !status.equals("Operando")){
             throw new RuntimeException("ERRO: valor de 'status' inválido!");
         }
 
@@ -74,10 +74,8 @@ public class EquipamentoService {
             throw new RuntimeException("ERRO: equipamento com esse ID não encontrado!");
         }
 
-        // Verifica se possui uma manutenção em aberto:
-        if(equipamento.getStatus().equals("Em manutenção")){
-            throw new RuntimeException("ERRO: esse equipamento não pode ser deletado; possui uma manutenção em aberto!");
-        }
+        // Verifica se possui manutenção em aberto:
+        if(equipamento.getStatus().equals("Em manutenção"))
 
         repository.delete(id);
     }

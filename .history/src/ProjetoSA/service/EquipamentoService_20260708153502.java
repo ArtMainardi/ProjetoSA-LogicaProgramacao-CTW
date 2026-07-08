@@ -76,7 +76,7 @@ public class EquipamentoService {
 
         // Verifica se possui uma manutenção em aberto:
         if(equipamento.getStatus().equals("Em manutenção")){
-            throw new RuntimeException("ERRO: esse equipamento não pode ser deletado; possui uma manutenção em aberto!");
+            
         }
 
         repository.delete(id);
