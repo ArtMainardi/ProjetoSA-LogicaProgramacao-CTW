@@ -17,7 +17,7 @@ public class EquipamentoService {
             throw new RuntimeException("ERRO: não é permitido cadastrar equipamentos com algum dado vazio!");
         }
         if(!status.equals("Operando") && !status.equals("Operando") && !status.equals("Operando")){
-            throw new RuntimeException("ERRO: valor de 'status' inválido!");
+            throw new Exception("ERRO: valor de 'status' inválido!");
         }
         Equipamento equipamento = repository.create(newEquipamento);
         return equipamento;
