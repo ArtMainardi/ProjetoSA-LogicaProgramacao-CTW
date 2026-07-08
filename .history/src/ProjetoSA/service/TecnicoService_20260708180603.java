@@ -30,18 +30,6 @@ public class TecnicoService {
         if(tecnicos.isEmpty()){
             throw new RuntimeException("Nenhum técnico salvo!");
         }
-        
         return tecnicos;
-    }
-
-    // Buscar (ID):
-    public Tecnico buscarId(int id){
-        // Verifica se encontrou um dado:
-        Tecnico tecnico = repository.readId(id);
-        if(tecnico == null){
-            throw new RuntimeException("ERRO: nenhum técnico com esse ID encontrado!");
-        }
-
-        return tecnico;
     }
 }

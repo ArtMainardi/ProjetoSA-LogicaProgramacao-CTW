@@ -42,6 +42,6 @@ public class TecnicoService {
             throw new RuntimeException("ERRO: nenhum técnico com esse ID encontrado!");
         }
 
-        return tecnico;
+        return 
     }
 }
