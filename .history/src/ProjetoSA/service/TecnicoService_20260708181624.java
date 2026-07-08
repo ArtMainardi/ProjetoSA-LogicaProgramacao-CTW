@@ -48,9 +48,9 @@ public class TecnicoService {
     // Buscar (matrícula):
     public Tecnico buscarMatricula(String matricula){
         // Verifica se encontrou um dado:
-        Tecnico tecnico = repository.readMatricula(matricula);
+        Tecnico tecnico = repository.readId(id);
         if(tecnico == null){
-            throw new RuntimeException("ERRO: nenhum técnico com essa matrícula encontrado!");
+            throw new RuntimeException("ERRO: nenhum técnico com essa m encontrado!");
         }
 
         return tecnico;

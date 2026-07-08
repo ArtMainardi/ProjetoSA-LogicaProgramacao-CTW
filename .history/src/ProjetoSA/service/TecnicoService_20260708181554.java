@@ -46,13 +46,5 @@ public class TecnicoService {
     }
 
     // Buscar (matrícula):
-    public Tecnico buscarMatricula(String matricula){
-        // Verifica se encontrou um dado:
-        Tecnico tecnico = repository.readMatricula(matricula);
-        if(tecnico == null){
-            throw new RuntimeException("ERRO: nenhum técnico com essa matrícula encontrado!");
-        }
-
-        return tecnico;
-    }
+    public 
 }
