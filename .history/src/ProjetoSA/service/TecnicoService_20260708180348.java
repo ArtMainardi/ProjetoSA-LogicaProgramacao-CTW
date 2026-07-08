@@ -28,9 +28,8 @@ public class TecnicoService {
         // Verifica se a lista não está vazia:
         List<Tecnico> tecnicos = repository.read();
         if(tecnicos.isEmpty()){
-            throw new RuntimeException("Nenhum técnico salvo!");
+            throw new RuntimeException("");
         }
-        
         return tecnicos;
     }
 }

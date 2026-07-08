@@ -30,7 +30,6 @@ public class TecnicoService {
         if(tecnicos.isEmpty()){
             throw new RuntimeException("Nenhum técnico salvo!");
         }
-        
         return tecnicos;
     }
 }
