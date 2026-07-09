@@ -1,0 +1,58 @@
+package projetoSA.repository;
+
+import java.util.ArrayList;
+import java.util.List;
+import projetoSA.model.Equipamento;
+
+public class EquipamentoRepository {
+    private ArrayList<Equipamento> equipamentos;
+    private int nextId;
+
+    public EquipamentoRepository(Dados d){
+        equipamentos = d.getEquipamentos();
+        nextId = d.get
+    }
+
+    // CREATE:
+    public Equipamento create(Equipamento newEquipamento){
+        int newId = nextId;
+        nextId++;
+        newEquipamento.setCodigo(newId);
+        equipamentos.add(newEquipamento);
+        return readId(newId);
+    }
+
+    // READ:
+    public List<Equipamento> read(){
+        return equipamentos;
+    }
+
+    // READ (ID):
+    public Equipamento readId(int id){
+        // Procura equipamento com o ID informado:
+        Equipamento equipamento = null;
+        for(Equipamento e : equipamentos){
+            if(e.getCodigo() == id){
+                equipamento = e;
+            }
+        }
+        return equipamento;
+    }
+
+    // UPDATE:
+    public Equipamento update(Equipamento modifiedEquipamento){
+        // Procura pelo objeto:
+        int id = modifiedEquipamento.getCodigo();
+        for(Equipamento e : equipamentos){
+            if(e.getCodigo() == id){
+                e = modifiedEquipamento;
+            }
+        }
+        return readId(id);
+    }
+
+    // DELETE:
+    public void delete(int id){
+        equipamentos.remove(readId(id));
+    }
+}
