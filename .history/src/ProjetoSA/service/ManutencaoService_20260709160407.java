@@ -1,6 +1,5 @@
 package projetoSA.service;
 
-import java.util.List;
 import projetoSA.model.Manutencao;
 import projetoSA.repository.ManutencaoRepository;
 
@@ -31,14 +30,5 @@ public class ManutencaoService {
         return repository.create(objeto);
     }
 
-    // Listar:
-    public List<Manutencao> listar(){
-        List<Manutencao> manutencoes = repository.read();
-
-        // Verifica se encontrou um dado:
-        if(manutencoes.isEmpty()){
-            throw new RuntimeException("Nenhuma manutenção salva!");
-        }
-        return manutencoes;
-    }
+    // 
 }

@@ -37,8 +37,7 @@ public class ManutencaoService {
 
         // Verifica se encontrou um dado:
         if(manutencoes.isEmpty()){
-            throw new RuntimeException("Nenhuma manutenção salva!");
+            throw new RuntimeException()
         }
-        return manutencoes;
     }
 }

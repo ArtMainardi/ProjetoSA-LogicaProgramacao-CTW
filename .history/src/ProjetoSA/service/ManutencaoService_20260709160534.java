@@ -39,6 +39,6 @@ public class ManutencaoService {
         if(manutencoes.isEmpty()){
             throw new RuntimeException("Nenhuma manutenção salva!");
         }
-        return manutencoes;
+        
     }
 }

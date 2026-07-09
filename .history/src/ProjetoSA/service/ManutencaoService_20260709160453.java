@@ -35,10 +35,6 @@ public class ManutencaoService {
     public List<Manutencao> listar(){
         List<Manutencao> manutencoes = repository.read();
 
-        // Verifica se encontrou um dado:
-        if(manutencoes.isEmpty()){
-            throw new RuntimeException("Nenhuma manutenção salva!");
-        }
-        return manutencoes;
+        // Verifica se 
     }
 }
