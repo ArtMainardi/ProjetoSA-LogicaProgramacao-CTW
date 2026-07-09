@@ -36,6 +36,7 @@ public class EquipamentoRepository {
         if(equipamento == null){
             return null;
         }
+
         return equipamento;
     }
 

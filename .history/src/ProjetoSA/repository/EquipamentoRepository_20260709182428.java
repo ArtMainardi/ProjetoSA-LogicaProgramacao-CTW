@@ -34,8 +34,9 @@ public class EquipamentoRepository {
 
         // Verifica se encontrou:
         if(equipamento == null){
-            return null;
+
         }
+
         return equipamento;
     }
 

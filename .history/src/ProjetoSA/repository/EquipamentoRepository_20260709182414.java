@@ -25,7 +25,7 @@ public class EquipamentoRepository {
     // READ (ID):
     public Equipamento readId(int id){
         // Procura equipamento com o ID informado:
-        Equipamento equipamento = null;
+        Equipamento equipamento;
         for(Equipamento e : equipamentos){
             if(e.getCodigo() == id){
                 equipamento = e;
@@ -33,9 +33,7 @@ public class EquipamentoRepository {
         }
 
         // Verifica se encontrou:
-        if(equipamento == null){
-            return null;
-        }
+        if(equipamento == null)
         return equipamento;
     }
 

@@ -24,19 +24,8 @@ public class EquipamentoRepository {
 
     // READ (ID):
     public Equipamento readId(int id){
-        // Procura equipamento com o ID informado:
-        Equipamento equipamento = null;
-        for(Equipamento e : equipamentos){
-            if(e.getCodigo() == id){
-                equipamento = e;
-            }
-        }
-
-        // Verifica se encontrou:
-        if(equipamento == null){
-            return null;
-        }
-        return equipamento;
+        for(Equipamento e : equipamentos)
+        return equipamentos.get(id);
     }
 
     // UPDATE:
