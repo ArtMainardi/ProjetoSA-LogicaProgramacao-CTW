@@ -115,7 +115,6 @@ public class ManutencaoService {
         }
 
         // Faz a atualização:
-        objeto.setSituacao(status);
         return repository.update(objeto);
     }
 

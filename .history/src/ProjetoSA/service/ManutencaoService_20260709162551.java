@@ -91,32 +91,7 @@ public class ManutencaoService {
 
     // Modificar status:
     public Manutencao modificarStatus(int id, String status){
-        // Verifica se encontrou o dado:
-        Manutencao objeto = repository.readId(id);
-        if(objeto == null){
-            throw new RuntimeException("ERRO: nenhuma manutenção encontrada com esse ID!");
-        }
-
-        // Compara estado atual:
-        if(objeto.getSituacao().equals(status)){
-            throw new RuntimeException("ERRO: a manutenção com esse ID já possui o status informado!");
-        }
-
-        // Verifica valores de 'situacao':
-        if(status.equals("Aberta")){
-            if(objeto.getSituacao().equals("Finalizada")){
-                // <----  Fazer verificação de disponibilidade do 'equipamento' aqui 
-                // <----  Fazer atualização de status do equipamento aqui
-            }
-        } else if(status.equals("Finalizada")){
-            // <----  Fazer atualização de status do equipamento aqui
-        } else if(!status.equals("Em andamento")){
-            throw new RuntimeException("ERRO: valor de 'situacao' inválido!");
-        }
-
-        // Faz a atualização:
-        objeto.setSituacao(status);
-        return repository.update(objeto);
+        
     }
 
     // Deletar:

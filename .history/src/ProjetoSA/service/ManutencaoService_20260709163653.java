@@ -105,17 +105,17 @@ public class ManutencaoService {
         // Verifica valores de 'situacao':
         if(status.equals("Aberta")){
             if(objeto.getSituacao().equals("Finalizada")){
-                // <----  Fazer verificação de disponibilidade do 'equipamento' aqui 
-                // <----  Fazer atualização de status do equipamento aqui
+        // <----  Fazer verificação de disponibilidade do 'equipamento' aqui 
             }
+        } else if(status.equals("Em andamento")){
+
         } else if(status.equals("Finalizada")){
-            // <----  Fazer atualização de status do equipamento aqui
-        } else if(!status.equals("Em andamento")){
+            
+        } else{
             throw new RuntimeException("ERRO: valor de 'situacao' inválido!");
         }
 
         // Faz a atualização:
-        objeto.setSituacao(status);
         return repository.update(objeto);
     }
 

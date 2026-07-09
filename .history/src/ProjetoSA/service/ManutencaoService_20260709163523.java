@@ -102,20 +102,17 @@ public class ManutencaoService {
             throw new RuntimeException("ERRO: a manutenção com esse ID já possui o status informado!");
         }
 
-        // Verifica valores de 'situacao':
+        // Verifica novo valor de 'situacao':
         if(status.equals("Aberta")){
-            if(objeto.getSituacao().equals("Finalizada")){
-                // <----  Fazer verificação de disponibilidade do 'equipamento' aqui 
-                // <----  Fazer atualização de status do equipamento aqui
-            }
-        } else if(status.equals("Finalizada")){
-            // <----  Fazer atualização de status do equipamento aqui
-        } else if(!status.equals("Em andamento")){
+            
+        } else if(status.equals("Em andamento"){
+        }status.equals("Finalizada")){
             throw new RuntimeException("ERRO: valor de 'situacao' inválido!");
         }
 
+        if(objeto.getSituacao().equals("Finalizada"))
+
         // Faz a atualização:
-        objeto.setSituacao(status);
         return repository.update(objeto);
     }
 
