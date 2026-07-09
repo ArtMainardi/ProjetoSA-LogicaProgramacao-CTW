@@ -152,8 +152,7 @@ public class ManutencaoService {
             throw new RuntimeException("ERRO: nenhuma manutenção encontrada com esse ID!");
         }
 
-        // Atualiza status de 'equipamento':
-        objeto.getEquipamento().setStatus("Operando");
+        // <----  Fazer atualização de status de 'equipamento' aqui
         repository.delete(id);
     }
 }

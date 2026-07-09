@@ -100,8 +100,7 @@ public class ManutencaoService {
         
         // Atualiza status dos equipamentos (antigo e novo, se forem diferentes):
         if(objeto.getEquipamento() != e){
-            objeto.getEquipamento().setStatus("Operando");
-            e.setStatus("Em manutenção");
+            objeto.getEquipamento().setStatus("null");
         }
         
         modifiedManutencao.setCodigo(id);
@@ -152,8 +151,7 @@ public class ManutencaoService {
             throw new RuntimeException("ERRO: nenhuma manutenção encontrada com esse ID!");
         }
 
-        // Atualiza status de 'equipamento':
-        objeto.getEquipamento().setStatus("Operando");
+        // <----  Fazer atualização de status de 'equipamento' aqui
         repository.delete(id);
     }
 }

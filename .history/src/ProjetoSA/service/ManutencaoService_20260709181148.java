@@ -153,7 +153,7 @@ public class ManutencaoService {
         }
 
         // Atualiza status de 'equipamento':
-        objeto.getEquipamento().setStatus("Operando");
+        objeto.getEquipamento().setStatus("Em manutenção");
         repository.delete(id);
     }
 }
