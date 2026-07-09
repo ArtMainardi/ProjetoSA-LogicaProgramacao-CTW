@@ -58,7 +58,7 @@ public class ManutencaoService {
     }
 
     // Atualizar:
-    public Manutencao atualizar(Manutencao modifiedManutencao, int id, TecnicoService tService){
+    public Manutencao atualizar(Manutencao modifiedManutencao, int id, Tecni){
         // Verifica se encontrou o dado:
         Manutencao objeto = repository.readId(id);
         if(objeto == null){
