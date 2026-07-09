@@ -6,7 +6,7 @@ import projetoSA.model.Manutencao;
 import projetoSA.repository.ManutencaoRepository;
 
 public class ManutencaoService {
-    final ManutencaoRepository repository = new ManutencaoRepository();
+    private ManutencaoRepository repository = new ManutencaoRepository();
 
     // Salvar:
     public Manutencao salvar(Manutencao objeto, EquipamentoService eService, TecnicoService tService){

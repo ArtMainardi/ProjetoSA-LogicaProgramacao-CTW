@@ -5,7 +5,7 @@ import projetoSA.model.Tecnico;
 import projetoSA.repository.TecnicoRepository;
 
 public class TecnicoService {
-    final TecnicoRepository repository = new TecnicoRepository();
+    private TecnicoRepository repository = new TecnicoRepository();
 
     // Salvar:
     public Tecnico salvar(Tecnico newTecnico){
