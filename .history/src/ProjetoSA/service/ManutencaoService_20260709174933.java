@@ -111,7 +111,8 @@ public class ManutencaoService {
         // Verifica valores de 'situacao':
         if(status.equals("Aberta")){
             if(objeto.getSituacao().equals("Finalizada")){
-                // <----  Fazer verificação de disponibilidade do 'equipamento' aqui 
+                // Verifica integridade do 'equipamento' aqui:
+                    eService.buscarId(objeto.getEquipamento().getCodigo());
                 // <----  Fazer atualização de status do equipamento aqui
             }
         } else if(status.equals("Finalizada")){

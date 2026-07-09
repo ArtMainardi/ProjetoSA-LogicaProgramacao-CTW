@@ -12,8 +12,7 @@ public class ManutencaoService {
         // Verificação da integridade do 'tecnico'
         tService.buscarId(objeto.getTecnico().getCodigo());
 
-        // Verifica integridade do 'equipamento' aqui:
-        eService.buscarId(objeto.getEquipamento().getCodigo());
+        // Verificação da integridade do 'equipamento' aqui 
         // <----  Fazer verificação de disponibilidade do 'equipamento' aqui 
 
         // Verificando integridade dos dados:
@@ -59,7 +58,7 @@ public class ManutencaoService {
     }
 
     // Atualizar:
-    public Manutencao atualizar(Manutencao modifiedManutencao, int id, EquipamentoService eService, TecnicoService tService){
+    public Manutencao atualizar(Manutencao modifiedManutencao, int id, TecnicoService tService){
         // Verifica se encontrou o dado:
         Manutencao objeto = repository.readId(id);
         if(objeto == null){
@@ -69,8 +68,7 @@ public class ManutencaoService {
         // Verificação da integridade do 'tecnico'
         tService.buscarId(objeto.getTecnico().getCodigo());
 
-        // Verifica integridade do 'equipamento' aqui:
-        eService.buscarId(objeto.getEquipamento().getCodigo());
+        // <----  Fazer verificação da integridade do 'equipamento' aqui 
         // <----  Fazer verificação de disponibilidade do 'equipamento' aqui 
 
         // Verificando integridade dos dados:
