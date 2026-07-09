@@ -1,0 +1,12 @@
+package projetoSA.repository;
+
+import java.util.ArrayList;
+import projetoSA.model.Equipamento;
+
+public class Dados {
+    // Equipamentos:
+    private ArrayList<Equipamento> equipamentos = new ArrayList<>();
+    private int eNextId = 0;
+
+    
+}

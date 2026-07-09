@@ -8,12 +8,6 @@ public class TecnicoRepository {
     private ArrayList<Tecnico> tecnicos;
     private int nextId;
 
-    // Construtor:
-    public TecnicoRepository(Dados d){
-        tecnicos = d.getTecnicos();
-        nextId = d.gettNextId();
-    }
-
     // CREATE:
     public Tecnico create(Tecnico newTecnico){
         int newId = nextId;

@@ -5,14 +5,8 @@ import java.util.List;
 import projetoSA.model.Manutencao;
 
 public class ManutencaoRepository {
-    private ArrayList<Manutencao> manutencoes;
-    private int nextId;
-
-    // Construtor:
-    public ManutencaoRepository(Dados d){
-        manutencoes = d.getManutencoes();
-        nextId = d.getmNextId();
-    }
+    private ArrayList<Manutencao> manutencoes = new ArrayList<>();
+    private int nextId = 0;
 
     // CREATE:
     public Manutencao create(Manutencao newManutencao){

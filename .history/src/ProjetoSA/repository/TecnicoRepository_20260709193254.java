@@ -11,7 +11,7 @@ public class TecnicoRepository {
     // Construtor:
     public TecnicoRepository(Dados d){
         tecnicos = d.getTecnicos();
-        nextId = d.gettNextId();
+        nextId = d.get
     }
 
     // CREATE:

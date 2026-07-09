@@ -8,12 +8,6 @@ public class ManutencaoRepository {
     private ArrayList<Manutencao> manutencoes;
     private int nextId;
 
-    // Construtor:
-    public ManutencaoRepository(Dados d){
-        manutencoes = d.getManutencoes();
-        nextId = d.getmNextId();
-    }
-
     // CREATE:
     public Manutencao create(Manutencao newManutencao){
         int newId = nextId;

@@ -6,13 +6,7 @@ import projetoSA.model.Tecnico;
 
 public class TecnicoRepository {
     private ArrayList<Tecnico> tecnicos;
-    private int nextId;
-
-    // Construtor:
-    public TecnicoRepository(Dados d){
-        tecnicos = d.getTecnicos();
-        nextId = d.gettNextId();
-    }
+    private int nextId = 0;
 
     // CREATE:
     public Tecnico create(Tecnico newTecnico){

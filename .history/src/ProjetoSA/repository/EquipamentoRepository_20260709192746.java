@@ -5,14 +5,7 @@ import java.util.List;
 import projetoSA.model.Equipamento;
 
 public class EquipamentoRepository {
-    private ArrayList<Equipamento> equipamentos;
-    private int nextId;
-
-    // Construtor:
-    public EquipamentoRepository(Dados d){
-        equipamentos = d.getEquipamentos();
-        nextId = d.geteNextId();
-    }
+    public Eq
 
     // CREATE:
     public Equipamento create(Equipamento newEquipamento){

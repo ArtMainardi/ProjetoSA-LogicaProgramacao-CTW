@@ -9,9 +9,8 @@ public class TecnicoRepository {
     private int nextId;
 
     // Construtor:
-    public TecnicoRepository(Dados d){
-        tecnicos = d.getTecnicos();
-        nextId = d.gettNextId();
+    public TecnicoRepository(){
+        
     }
 
     // CREATE:
