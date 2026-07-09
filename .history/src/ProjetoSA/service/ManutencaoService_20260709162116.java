@@ -96,8 +96,5 @@ public class ManutencaoService {
         if(objeto == null){
             throw new RuntimeException("ERRO: nenhuma manutenção encontrada com esse ID!");
         }
-
-        // <----  Fazer atualização de status de 'equipamento' aqui
-        repository.delete(id);
     }
 }

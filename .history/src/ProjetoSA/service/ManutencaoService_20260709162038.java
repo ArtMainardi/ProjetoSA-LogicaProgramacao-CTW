@@ -84,20 +84,9 @@ public class ManutencaoService {
         }
         
         // <----  Fazer atualização de status dos equipamentos (antigo e novo, se forem diferentes) aqui
-        
+
         modifiedManutencao.setCodigo(id);
         return repository.update(modifiedManutencao);
     }
-
-    // Deletar:
-    public void deletar(int id){
-        // Verifica se encontrou o dado:
-        Manutencao objeto = repository.readId(id);
-        if(objeto == null){
-            throw new RuntimeException("ERRO: nenhuma manutenção encontrada com esse ID!");
-        }
-
-        // <----  Fazer atualização de status de 'equipamento' aqui
-        repository.delete(id);
-    }
+    
 }

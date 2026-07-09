@@ -98,6 +98,6 @@ public class ManutencaoService {
         }
 
         // <----  Fazer atualização de status de 'equipamento' aqui
-        repository.delete(id);
+        
     }
 }
