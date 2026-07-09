@@ -104,7 +104,7 @@ public class ManutencaoService {
     }
 
     // Modificar status:
-    public Manutencao modificarStatus(int id, String status, EquipamentoService eService){
+    public Manutencao modificarStatus(int id, String status){
         // Verifica se encontrou o dado:
         Manutencao objeto = repository.readId(id);
         if(objeto == null){

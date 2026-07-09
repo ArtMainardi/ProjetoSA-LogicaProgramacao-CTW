@@ -15,10 +15,8 @@ public class ManutencaoService {
 
         // Verifica integridade do 'equipamento' aqui:
         Equipamento e = eService.buscarId(objeto.getEquipamento().getCodigo());
-        // Verifica disponibilidade do 'equipamento':
-        if(e.getStatus().equals("Em manutenção")){
-            throw new RuntimeException("ERRO: o equipamento informado já possui uma manutenção em aberto!");
-        }
+        // Verificaa disponibilidade do 'equipamento':
+        if(e.getStatus().equals("Em manutenção"))
 
         // Verificando integridade dos dados:
         if(objeto.getDataAbertura().trim().isEmpty() || objeto.getDataEncerramento().trim().isEmpty() 
@@ -75,11 +73,7 @@ public class ManutencaoService {
 
         // Verifica integridade do 'equipamento' aqui:
         eService.buscarId(objeto.getEquipamento().getCodigo());
-        // Verifica disponibilidade do 'equipamento':
-        Equipamento e = eService.buscarId(objeto.getEquipamento().getCodigo());
-        if(e.getStatus().equals("Em manutenção")){
-            throw new RuntimeException("ERRO: o equipamento informado já possui uma manutenção em aberto!");
-        }
+        // <----  Fazer verificação de disponibilidade do 'equipamento' aqui 
 
         // Verificando integridade dos dados:
         if(objeto.getDataAbertura().trim().isEmpty() || objeto.getDataEncerramento().trim().isEmpty() 
@@ -104,7 +98,7 @@ public class ManutencaoService {
     }
 
     // Modificar status:
-    public Manutencao modificarStatus(int id, String status, EquipamentoService eService){
+    public Manutencao modificarStatus(int id, String status){
         // Verifica se encontrou o dado:
         Manutencao objeto = repository.readId(id);
         if(objeto == null){
@@ -119,11 +113,7 @@ public class ManutencaoService {
         // Verifica valores de 'situacao':
         if(status.equals("Aberta")){
             if(objeto.getSituacao().equals("Finalizada")){
-                // Verifica disponibilidade do 'equipamento':
-                Equipamento e = eService.buscarId(objeto.getEquipamento().getCodigo());
-                if(e.getStatus().equals("Em manutenção")){
-                    throw new RuntimeException("ERRO: o equipamento informado já possui uma manutenção em aberto!");
-                }
+                // <----  Fazer verificação de disponibilidade do 'equipamento' aqui 
                 // <----  Fazer atualização de status do equipamento aqui
             }
         } else if(status.equals("Finalizada")){
