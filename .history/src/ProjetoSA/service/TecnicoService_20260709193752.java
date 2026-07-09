@@ -2,16 +2,12 @@ package projetoSA.service;
 
 import java.util.List;
 import projetoSA.model.Tecnico;
-import projetoSA.repository.Dados;
 import projetoSA.repository.TecnicoRepository;
 
 public class TecnicoService {
-    private TecnicoRepository repository;
+    final TecnicoRepository repository;
 
-    // Construtor:
-    public TecnicoService(Dados d){
-        repository = new TecnicoRepository(d);
-    }
+    
 
     // Salvar:
     public Tecnico salvar(Tecnico newTecnico){

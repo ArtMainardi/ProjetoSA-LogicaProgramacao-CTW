@@ -15,11 +15,11 @@ public class ManutencaoService {
     public ManutencaoService(Dados d){
         repository = new ManutencaoRepository(d);
         eService = new EquipamentoService(d);
-        tService = new TecnicoService(d);
+        
     }
 
     // Salvar:
-    public Manutencao salvar(Manutencao objeto){
+    public Manutencao salvar(Manutencao objeto, EquipamentoService eService, TecnicoService tService){
         // Verificação da integridade do 'tecnico'
         tService.buscarId(objeto.getTecnico().getCodigo());
 
@@ -74,7 +74,7 @@ public class ManutencaoService {
     }
 
     // Atualizar:
-    public Manutencao atualizar(Manutencao modifiedManutencao, int id){
+    public Manutencao atualizar(Manutencao modifiedManutencao, int id, EquipamentoService eService, TecnicoService tService){
         // Verifica se encontrou o dado:
         Manutencao objeto = repository.readId(id);
         if(objeto == null){
@@ -119,7 +119,7 @@ public class ManutencaoService {
     }
 
     // Modificar status:
-    public Manutencao modificarStatus(int id, String status){
+    public Manutencao modificarStatus(int id, String status, EquipamentoService eService){
         // Verifica se encontrou o dado:
         Manutencao objeto = repository.readId(id);
         if(objeto == null){

@@ -2,7 +2,6 @@ package projetoSA.service;
 
 import java.util.List;
 import projetoSA.model.Equipamento;
-import projetoSA.repository.Dados;
 import projetoSA.repository.EquipamentoRepository;
 
 public class EquipamentoService {
@@ -10,7 +9,7 @@ public class EquipamentoService {
 
     // Construtor:
     public EquipamentoService(Dados d){
-        repository = new EquipamentoRepository(d);
+        repository = new 
     }
 
     // Adicionar:

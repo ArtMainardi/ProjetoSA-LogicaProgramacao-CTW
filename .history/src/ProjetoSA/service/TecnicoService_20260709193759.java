@@ -3,14 +3,15 @@ package projetoSA.service;
 import java.util.List;
 import projetoSA.model.Tecnico;
 import projetoSA.repository.Dados;
+import projetoSA.repository.ManutencaoRepository;
 import projetoSA.repository.TecnicoRepository;
 
 public class TecnicoService {
     private TecnicoRepository repository;
 
     // Construtor:
-    public TecnicoService(Dados d){
-        repository = new TecnicoRepository(d);
+    public ManutencaoService(Dados d){
+        repository = new ManutencaoRepository(d);
     }
 
     // Salvar:

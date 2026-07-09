@@ -3,6 +3,7 @@ package projetoSA.service;
 import java.util.List;
 import projetoSA.model.Tecnico;
 import projetoSA.repository.Dados;
+import projetoSA.repository.ManutencaoRepository;
 import projetoSA.repository.TecnicoRepository;
 
 public class TecnicoService {
@@ -10,7 +11,7 @@ public class TecnicoService {
 
     // Construtor:
     public TecnicoService(Dados d){
-        repository = new TecnicoRepository(d);
+        repository = new Tecnico(d);
     }
 
     // Salvar:
