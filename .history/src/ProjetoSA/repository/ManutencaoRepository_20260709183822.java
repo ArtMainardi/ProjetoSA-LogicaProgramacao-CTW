@@ -14,7 +14,7 @@ public class ManutencaoRepository {
         nextId++;
         newManutencao.setCodigo(newId);
         manutencoes.add(newManutencao);
-        return readId(newId);
+        return manutencoes.get(newId);
     }
 
     // READ:
