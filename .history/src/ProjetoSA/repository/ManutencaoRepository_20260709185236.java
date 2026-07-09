@@ -35,13 +35,9 @@ public class ManutencaoRepository {
 
     // UPDATE:
     public Manutencao update(Manutencao modifiedManutencao){
-        // Procura pela manutenção:
+        // Procura pelo 
         int id = modifiedManutencao.getCodigo();
-        for(Manutencao m : manutencoes){
-            if(m.getCodigo() == id){
-                m = modifiedManutencao;
-            }
-        }
+        manutencoes.set(id, modifiedManutencao);
         return readId(id);
     }
 

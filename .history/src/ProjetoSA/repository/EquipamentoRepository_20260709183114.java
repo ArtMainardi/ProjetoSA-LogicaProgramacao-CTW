@@ -36,18 +36,13 @@ public class EquipamentoRepository {
 
     // UPDATE:
     public Equipamento update(Equipamento modifiedEquipamento){
-        // Procura pelo objeto:
         int id = modifiedEquipamento.getCodigo();
-        for(Equipamento e : equipamentos){
-            if(e.getCodigo() == id){
-                e = modifiedEquipamento;
-            }
-        }
+        equipamentos.set(id, modifiedEquipamento);
         return readId(id);
     }
 
     // DELETE:
     public void delete(int id){
-        equipamentos.remove(readId(id));
+        equipamentos.remove(id);
     }
 }

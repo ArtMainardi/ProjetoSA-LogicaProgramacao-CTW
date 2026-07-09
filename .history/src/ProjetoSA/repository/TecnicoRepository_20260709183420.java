@@ -48,18 +48,13 @@ public class TecnicoRepository {
 
     // UPDATE:
     public Tecnico update(Tecnico modifiedTecnico){
-        // Procura pelo técnico:
         int id = modifiedTecnico.getCodigo();
-        for(Tecnico t : tecnicos){
-            if(t.getCodigo() == id){
-                t = modifiedTecnico;
-            }
-        }
-        return readId(id);
+        tecnicos.set(id, modifiedTecnico);
+        return tecnicos.get(id);
     }
 
     // DELETE:
     public void delete(int id){
-        tecnicos.remove(readId(id));
+        tecnicos.remove(id);
     }
 }

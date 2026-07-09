@@ -42,6 +42,7 @@ public class ManutencaoRepository {
                 m = modifiedManutencao;
             }
         }
+        manutencoes.set(id, modifiedManutencao);
         return readId(id);
     }
 

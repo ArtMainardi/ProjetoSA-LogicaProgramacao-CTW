@@ -14,7 +14,7 @@ public class TecnicoRepository {
         nextId++;
         newTecnico.setCodigo(newId);
         tecnicos.add(newTecnico);
-        return readId(newId);
+        return tecnicos.get(newId);
     }
 
     // READ:
@@ -31,7 +31,9 @@ public class TecnicoRepository {
                 tecnico = t;
             }
         }
-        return tecnico;
+
+        // Verifica se encontrou:
+        return tecnicos.get(id);
     }
 
     // READ (MATRICULA):
@@ -43,23 +45,23 @@ public class TecnicoRepository {
                 id = t.getCodigo();
             }
         }
+
+        // Verifica e retorna resultado:
+        if(id == null){
+            return null;
+        }
         return readId(id);
     }
 
     // UPDATE:
     public Tecnico update(Tecnico modifiedTecnico){
-        // Procura pelo técnico:
         int id = modifiedTecnico.getCodigo();
-        for(Tecnico t : tecnicos){
-            if(t.getCodigo() == id){
-                t = modifiedTecnico;
-            }
-        }
-        return readId(id);
+        tecnicos.set(id, modifiedTecnico);
+        return tecnicos.get(id);
     }
 
     // DELETE:
     public void delete(int id){
-        tecnicos.remove(readId(id));
+        tecnicos.remove(id);
     }
 }

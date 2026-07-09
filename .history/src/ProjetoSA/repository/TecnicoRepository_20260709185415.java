@@ -55,6 +55,7 @@ public class TecnicoRepository {
                 t = modifiedTecnico;
             }
         }
+        tecnicos.set(id, modifiedTecnico);
         return readId(id);
     }
 

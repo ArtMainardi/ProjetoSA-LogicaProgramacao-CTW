@@ -37,12 +37,10 @@ public class EquipamentoRepository {
     // UPDATE:
     public Equipamento update(Equipamento modifiedEquipamento){
         // Procura pelo objeto:
-        int id = modifiedEquipamento.getCodigo();
         for(Equipamento e : equipamentos){
-            if(e.getCodigo() == id){
-                e = modifiedEquipamento;
-            }
+            if(e.getCodigo() == id)
         }
+        int id = modifiedEquipamento.getCodigo();
         return readId(id);
     }
 

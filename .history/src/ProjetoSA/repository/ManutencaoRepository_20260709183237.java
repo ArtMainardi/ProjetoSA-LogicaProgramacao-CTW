@@ -14,7 +14,7 @@ public class ManutencaoRepository {
         nextId++;
         newManutencao.setCodigo(newId);
         manutencoes.add(newManutencao);
-        return readId(newId);
+        return manutencoes.get(newId);
     }
 
     // READ:
@@ -26,27 +26,20 @@ public class ManutencaoRepository {
     public Manutencao readId(int id){
         // Procura a manutenção com o ID informado:
         for(Manutencao m : manutencoes){
-            if(m.getCodigo() == id){
-                return m;
-            }
+            if()
         }
-        return null;
+        return manutencoes.get(id);
     }
 
     // UPDATE:
     public Manutencao update(Manutencao modifiedManutencao){
-        // Procura pela manutenção:
         int id = modifiedManutencao.getCodigo();
-        for(Manutencao m : manutencoes){
-            if(m.getCodigo() == id){
-                m = modifiedManutencao;
-            }
-        }
-        return readId(id);
+        manutencoes.set(id, modifiedManutencao);
+        return manutencoes.get(id);
     }
 
     // DELETE:
     public void delete(int id){
-        manutencoes.remove(readId(id));
+        manutencoes.remove(id);
     }
 }

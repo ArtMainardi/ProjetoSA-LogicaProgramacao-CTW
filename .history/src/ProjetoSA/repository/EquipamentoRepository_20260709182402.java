@@ -25,29 +25,26 @@ public class EquipamentoRepository {
     // READ (ID):
     public Equipamento readId(int id){
         // Procura equipamento com o ID informado:
-        Equipamento equipamento = null;
+        Equipamento equipamento;
         for(Equipamento e : equipamentos){
             if(e.getCodigo() == id){
                 equipamento = e;
             }
         }
+
+        // Verifica se encontrou
         return equipamento;
     }
 
     // UPDATE:
     public Equipamento update(Equipamento modifiedEquipamento){
-        // Procura pelo objeto:
         int id = modifiedEquipamento.getCodigo();
-        for(Equipamento e : equipamentos){
-            if(e.getCodigo() == id){
-                e = modifiedEquipamento;
-            }
-        }
+        equipamentos.set(id, modifiedEquipamento);
         return readId(id);
     }
 
     // DELETE:
     public void delete(int id){
-        equipamentos.remove(readId(id));
+        equipamentos.remove(id);
     }
 }
