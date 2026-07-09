@@ -24,13 +24,8 @@ public class ManutencaoRepository {
 
     // READ (ID):
     public Manutencao readId(int id){
-        // Procura a manutenção com o ID informado:
-        for(Manutencao m : manutencoes){
-            if(m.getCodigo() == id){
-                return m;
-            }
-        }
-        return null;
+        // Procura o 
+        return manutencoes.get(id);
     }
 
     // UPDATE:
