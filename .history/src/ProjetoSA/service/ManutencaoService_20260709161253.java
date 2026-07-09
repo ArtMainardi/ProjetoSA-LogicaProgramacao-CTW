@@ -52,6 +52,5 @@ public class ManutencaoService {
         if(objeto == null){
             throw new RuntimeException("ERRO: nenhuma manutenção encontrada com esse ID!");
         }
-        return objeto;
     }
 }

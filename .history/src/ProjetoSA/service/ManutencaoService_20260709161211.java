@@ -48,10 +48,6 @@ public class ManutencaoService {
     public Manutencao buscarId(int id){
         Manutencao objeto = repository.readId(id);
 
-        // Verifica se encontrou o dado:
-        if(objeto == null){
-            throw new RuntimeException("ERRO: nenhuma manutenção encontrada com esse ID!");
-        }
-        return objeto;
+        // Verifica se encontrou o 
     }
 }

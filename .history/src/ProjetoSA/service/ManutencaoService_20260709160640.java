@@ -28,8 +28,7 @@ public class ManutencaoService {
         if(!objeto.getSituacao().equals("Aberta") && !objeto.getSituacao().equals("Em andamento") && !objeto.getSituacao().equals("Finalizada")){
             throw new RuntimeException("ERRO: valor de 'situacao' inválido!");
         }
-        
-        // <----  Fazer atualização de status de 'equipamento' aqui
+
         return repository.create(objeto);
     }
 
@@ -44,14 +43,5 @@ public class ManutencaoService {
         return manutencoes;
     }
 
-    // Buscar (ID):
-    public Manutencao buscarId(int id){
-        Manutencao objeto = repository.readId(id);
-
-        // Verifica se encontrou o dado:
-        if(objeto == null){
-            throw new RuntimeException("ERRO: nenhuma manutenção encontrada com esse ID!");
-        }
-        return objeto;
-    }
+    // 
 }

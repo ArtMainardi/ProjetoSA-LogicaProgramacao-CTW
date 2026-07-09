@@ -1,6 +1,7 @@
 package projetoSA.service;
 
 import java.util.List;
+import jdk.jshell.spi.ExecutionControl;
 import projetoSA.model.Manutencao;
 import projetoSA.repository.ManutencaoRepository;
 
@@ -50,8 +51,7 @@ public class ManutencaoService {
 
         // Verifica se encontrou o dado:
         if(objeto == null){
-            throw new RuntimeException("ERRO: nenhuma manutenção encontrada com esse ID!");
+            throw new ExecutionControl.RunException
         }
-        return objeto;
     }
 }
