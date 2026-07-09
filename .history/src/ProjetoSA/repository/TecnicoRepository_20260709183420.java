@@ -50,7 +50,7 @@ public class TecnicoRepository {
     public Tecnico update(Tecnico modifiedTecnico){
         int id = modifiedTecnico.getCodigo();
         tecnicos.set(id, modifiedTecnico);
-        return readId(id);
+        return tecnicos.get(id);
     }
 
     // DELETE:
