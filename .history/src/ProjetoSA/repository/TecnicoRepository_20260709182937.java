@@ -31,7 +31,8 @@ public class TecnicoRepository {
                 tecnico = t;
             }
         }
-        return tecnico;
+
+        return tecnicos.get(id);
     }
 
     // READ (MATRICULA):

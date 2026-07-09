@@ -27,11 +27,11 @@ public class TecnicoRepository {
         // Procura técnico com o ID informado:
         Tecnico tecnico = null;
         for(Tecnico t : tecnicos){
-            if(t.getCodigo() == id){
-                tecnico = t;
+            if(t.getCodigo() = id){
+                tecnico = 
             }
         }
-        return tecnico;
+        return tecnicos.get(id);
     }
 
     // READ (MATRICULA):

@@ -24,14 +24,8 @@ public class TecnicoRepository {
 
     // READ (ID):
     public Tecnico readId(int id){
-        // Procura técnico com o ID informado:
-        Tecnico tecnico = null;
-        for(Tecnico t : tecnicos){
-            if(t.getCodigo() == id){
-                tecnico = t;
-            }
-        }
-        return tecnico;
+        // 
+        return tecnicos.get(id);
     }
 
     // READ (MATRICULA):

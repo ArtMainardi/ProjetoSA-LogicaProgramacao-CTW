@@ -31,7 +31,10 @@ public class TecnicoRepository {
                 tecnico = t;
             }
         }
-        return tecnico;
+
+        // Verifica se encontrou:
+        if(tecnico == null)
+        return tecnicos.get(id);
     }
 
     // READ (MATRICULA):
