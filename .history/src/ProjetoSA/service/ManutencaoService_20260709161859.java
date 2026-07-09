@@ -83,8 +83,7 @@ public class ManutencaoService {
             throw new RuntimeException("ERRO: valor de 'situacao' inválido!");
         }
         
-        // <----  Fazer atualização de status dos equipamentos (antigo e novo, se forem diferentes) aqui
-        
+        // <----  Fazer atualização de status dos 'equipamento' aqui
         modifiedManutencao.setCodigo(id);
         return repository.update(modifiedManutencao);
     }

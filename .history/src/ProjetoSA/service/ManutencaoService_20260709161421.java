@@ -57,35 +57,6 @@ public class ManutencaoService {
 
     // Atualizar:
     public Manutencao atualizar(Manutencao modifiedManutencao, int id){
-        // Verifica se encontrou o dado:
-        Manutencao objeto = repository.readId(id);
-        if(objeto == null){
-            throw new RuntimeException("ERRO: nenhuma manutenção encontrada com esse ID!");
-        }
-
-        // <----  Fazer verificação da integridade do 'tecnico' aqui 
-        // <----  Fazer verificação da integridade do 'equipamento' aqui 
-        // <----  Fazer verificação de disponibilidade do 'equipamento' aqui 
-
-        // Verificando integridade dos dados:
-        if(objeto.getDataAbertura().trim().isEmpty() || objeto.getDataEncerramento().trim().isEmpty() 
-                || objeto.getTipoManutencao().trim().isEmpty() || objeto.getSituacao().trim().isEmpty()){
-            throw new RuntimeException("ERRO: não é permitido cadastrar manutenções com algum dado vazio!");
-        }
-
-        // Verificar valores de 'tipoMovimentacao':
-        if(!objeto.getTipoManutencao().equals("Preventiva") && !objeto.getTipoManutencao().equals("Preventiva")){
-            throw new RuntimeException("ERRO: valor de 'tipo de movimentação' inválido!");
-        }
-
-        // Verificar valores de 'situacao':
-        if(!objeto.getSituacao().equals("Aberta") && !objeto.getSituacao().equals("Em andamento") && !objeto.getSituacao().equals("Finalizada")){
-            throw new RuntimeException("ERRO: valor de 'situacao' inválido!");
-        }
         
-        // <----  Fazer atualização de status dos equipamentos (antigo e novo, se forem diferentes) aqui
-        
-        modifiedManutencao.setCodigo(id);
-        return repository.update(modifiedManutencao);
     }
 }

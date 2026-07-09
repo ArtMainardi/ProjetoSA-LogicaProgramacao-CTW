@@ -84,7 +84,6 @@ public class ManutencaoService {
         }
         
         // <----  Fazer atualização de status dos equipamentos (antigo e novo, se forem diferentes) aqui
-        
         modifiedManutencao.setCodigo(id);
         return repository.update(modifiedManutencao);
     }

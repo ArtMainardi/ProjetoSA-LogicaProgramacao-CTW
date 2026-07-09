@@ -63,7 +63,8 @@ public class ManutencaoService {
             throw new RuntimeException("ERRO: nenhuma manutenção encontrada com esse ID!");
         }
 
-        // <----  Fazer verificação da integridade do 'tecnico' aqui 
+
+// <----  Fazer verificação da integridade do 'tecnico' aqui 
         // <----  Fazer verificação da integridade do 'equipamento' aqui 
         // <----  Fazer verificação de disponibilidade do 'equipamento' aqui 
 
@@ -83,8 +84,7 @@ public class ManutencaoService {
             throw new RuntimeException("ERRO: valor de 'situacao' inválido!");
         }
         
-        // <----  Fazer atualização de status dos equipamentos (antigo e novo, se forem diferentes) aqui
-        
+        // <----  Fazer atualização de status de 'equipamento' aqui
         modifiedManutencao.setCodigo(id);
         return repository.update(modifiedManutencao);
     }
