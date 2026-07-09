@@ -12,11 +12,11 @@ public class Dados {
 
     // Técnicos:
     private ArrayList<Tecnico> tecnicos = new ArrayList<>();
-    private int tNextId[] = {0};
+    private int tNextId[] = 0;
 
     // Manutenções:
     private ArrayList<Manutencao> manutencoes = new ArrayList<>();
-    private int mNextId[] = {0};
+    private int mNextId[] = 0;
 
 
     // Getters e Setters:
@@ -27,10 +27,10 @@ public class Dados {
         this.equipamentos = equipamentos;
     }
     // --
-    public int[] geteNextId() {
+    public int geteNextId() {
         return eNextId;
     }
-    public void seteNextId(int eNextId[]) {
+    public void seteNextId(int eNextId) {
         this.eNextId = eNextId;
     }
     // --
@@ -41,10 +41,10 @@ public class Dados {
         this.tecnicos = tecnicos;
     }
     // --
-    public int[] gettNextId() {
+    public int gettNextId() {
         return tNextId;
     }
-    public void settNextId(int tNextId[]) {
+    public void settNextId(int tNextId) {
         this.tNextId = tNextId;
     }
     // --
@@ -55,10 +55,10 @@ public class Dados {
         this.manutencoes = manutencoes;
     }
     // --
-    public int[] getmNextId() {
+    public int getmNextId() {
         return mNextId;
     }
-    public void setmNextId(int mNextId[]) {
+    public void setmNextId(int mNextId) {
         this.mNextId = mNextId;
     }
 }

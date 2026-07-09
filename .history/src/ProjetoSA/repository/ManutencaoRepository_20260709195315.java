@@ -16,8 +16,8 @@ public class ManutencaoRepository {
 
     // CREATE:
     public Manutencao create(Manutencao newManutencao){
-        int newId = nextId[0];
-        nextId[0]++;
+        int newId = nextId;
+        nextId++;
         newManutencao.setCodigo(newId);
         manutencoes.add(newManutencao);
         return readId(newId);

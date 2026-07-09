@@ -16,8 +16,8 @@ public class EquipamentoRepository {
 
     // CREATE:
     public Equipamento create(Equipamento newEquipamento){
-        int newId = nextId[0];
-        nextId[0]++;
+        int newId = nextId;
+        nextId++;
         newEquipamento.setCodigo(newId);
         equipamentos.add(newEquipamento);
         return readId(newId);

@@ -55,10 +55,10 @@ public class Dados {
         this.manutencoes = manutencoes;
     }
     // --
-    public int[] getmNextId() {
+    public int getmNextId() {
         return mNextId;
     }
-    public void setmNextId(int mNextId[]) {
+    public void setmNextId(int mNextId) {
         this.mNextId = mNextId;
     }
 }

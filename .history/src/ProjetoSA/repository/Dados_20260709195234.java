@@ -41,10 +41,10 @@ public class Dados {
         this.tecnicos = tecnicos;
     }
     // --
-    public int[] gettNextId() {
+    public int gettNextId() {
         return tNextId;
     }
-    public void settNextId(int tNextId[]) {
+    public void settNextId(int tNextId) {
         this.tNextId = tNextId;
     }
     // --
@@ -55,10 +55,10 @@ public class Dados {
         this.manutencoes = manutencoes;
     }
     // --
-    public int[] getmNextId() {
+    public int getmNextId() {
         return mNextId;
     }
-    public void setmNextId(int mNextId[]) {
+    public void setmNextId(int mNextId) {
         this.mNextId = mNextId;
     }
 }

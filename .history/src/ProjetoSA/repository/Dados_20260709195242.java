@@ -58,7 +58,7 @@ public class Dados {
     public int[] getmNextId() {
         return mNextId;
     }
-    public void setmNextId(int mNextId[]) {
+    public void setmNextId(int mNextId) {
         this.mNextId = mNextId;
     }
 }

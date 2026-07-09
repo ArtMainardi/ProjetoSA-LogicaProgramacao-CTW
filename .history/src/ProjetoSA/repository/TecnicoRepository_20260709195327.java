@@ -17,7 +17,7 @@ public class TecnicoRepository {
     // CREATE:
     public Tecnico create(Tecnico newTecnico){
         int newId = nextId[0];
-        nextId[0]++;
+        nextId++;
         newTecnico.setCodigo(newId);
         tecnicos.add(newTecnico);
         return readId(newId);
