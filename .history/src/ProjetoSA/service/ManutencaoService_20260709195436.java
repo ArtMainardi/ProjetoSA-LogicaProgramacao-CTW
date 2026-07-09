@@ -7,9 +7,9 @@ import projetoSA.repository.Dados;
 import projetoSA.repository.ManutencaoRepository;
 
 public class ManutencaoService {
-    final ManutencaoRepository repository;
-    final EquipamentoService eService;
-    final TecnicoService tService;
+    private ManutencaoRepository repository;
+    private EquipamentoService eService;
+    private TecnicoService tService;
 
     // Construtor:
     public ManutencaoService(Dados d){
