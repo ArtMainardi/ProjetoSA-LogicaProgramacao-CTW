@@ -55,6 +55,7 @@ public class TecnicoRepository {
 
     // DELETE:
     public void delete(int id){
-        tecnicos.remove(readId(id));
+        // Procura 
+        tecnicos.remove(id);
     }
 }
