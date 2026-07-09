@@ -27,21 +27,16 @@ public class TecnicoRepository {
         return tecnicos.get(id);
     }
 
-    // READ (MATRICULA):
-    public Tecnico readMatricula(String matricula){
+    // READ (EMAIL):
+    public Tecnico readEmail(String email){
         // Percorre toda a lista para procurar o técnico com a matrícula informada:
         Integer id = null;
         for(Tecnico t : tecnicos){
-            if(t.getMatricula().equals(matricula)){
-                id = t.getCodigo();
+            if(t.getMatricula().equals(email)){
+                id = 
             }
         }
-
-        // Verifica e retorna resultado:
-        if(id == null){
-            return null;
-        }
-        return readId(id);
+        return tecnicos.get(id);
     }
 
     // UPDATE:

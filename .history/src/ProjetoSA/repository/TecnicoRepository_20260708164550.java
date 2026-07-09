@@ -27,8 +27,8 @@ public class TecnicoRepository {
         return tecnicos.get(id);
     }
 
-    // READ (MATRICULA):
-    public Tecnico readMatricula(String matricula){
+    // READ (MATRICULA  ):
+    public Tecnico readEmail(String matricula){
         // Percorre toda a lista para procurar o técnico com a matrícula informada:
         Integer id = null;
         for(Tecnico t : tecnicos){

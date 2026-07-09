@@ -28,7 +28,7 @@ public class TecnicoRepository {
     }
 
     // READ (MATRICULA):
-    public Tecnico readMatricula(String matricula){
+    public Tecnico readEmail(String matricula){
         // Percorre toda a lista para procurar o técnico com a matrícula informada:
         Integer id = null;
         for(Tecnico t : tecnicos){
