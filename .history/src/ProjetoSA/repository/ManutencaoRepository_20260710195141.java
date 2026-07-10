@@ -3,6 +3,7 @@ package projetoSA.repository;
 import java.util.ArrayList;
 import java.util.List;
 import projetoSA.model.Manutencao;
+import projetoSA.model.Tecnico;
 
 public class ManutencaoRepository {
     final ArrayList<Manutencao> manutencoes;
@@ -45,10 +46,9 @@ public class ManutencaoRepository {
         // Procura as manutenções com o ID do técnico informado:
         for(Manutencao m : manutencoes){
             if(m.getTecnico().getCodigo() == id){
-                man.add(m);
+                man.add(m)
             }
         }
-        return man;
     }
 
     // UPDATE:

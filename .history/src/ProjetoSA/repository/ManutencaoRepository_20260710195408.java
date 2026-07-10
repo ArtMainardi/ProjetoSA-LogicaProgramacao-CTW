@@ -39,7 +39,7 @@ public class ManutencaoRepository {
         return null;
     }
 
-    // READ (TÉCNICO ID):
+    // READ (TÉCNICO ID ):
     public List<Manutencao> readTecnicoId(int id){
         ArrayList<Manutencao> man = new ArrayList<>();
         // Procura as manutenções com o ID do técnico informado:

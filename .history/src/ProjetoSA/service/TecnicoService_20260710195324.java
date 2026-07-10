@@ -102,13 +102,6 @@ public class TecnicoService {
         // Verifica se não possui nenhuma manutenção em aberto:
         ManutencaoRepository mRepository = new ManutencaoRepository(dados);
         List<Manutencao> manutencoes = mRepository.readTecnicoId(id);
-        if(!manutencoes.isEmpty()){
-            for(Manutencao m : manutencoes){
-                if(!m.getSituacao().equals("Finalizada")){
-                    throw new RuntimeException("ERRO: esse técnico possui manutenções em aberto!");
-                }
-            }
-        }
 
         repository.delete(id);
     }

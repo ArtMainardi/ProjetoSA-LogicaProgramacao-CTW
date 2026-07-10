@@ -1,10 +1,8 @@
 package projetoSA.service;
 
 import java.util.List;
-import projetoSA.model.Manutencao;
 import projetoSA.model.Tecnico;
 import projetoSA.repository.Dados;
-import projetoSA.repository.ManutencaoRepository;
 import projetoSA.repository.TecnicoRepository;
 
 public class TecnicoService {
@@ -14,7 +12,6 @@ public class TecnicoService {
     // Construtor:
     public TecnicoService(Dados d){
         repository = new TecnicoRepository(d);
-        dados = d;
     }
 
     // Salvar:
@@ -100,15 +97,6 @@ public class TecnicoService {
         }
 
         // Verifica se não possui nenhuma manutenção em aberto:
-        ManutencaoRepository mRepository = new ManutencaoRepository(dados);
-        List<Manutencao> manutencoes = mRepository.readTecnicoId(id);
-        if(!manutencoes.isEmpty()){
-            for(Manutencao m : manutencoes){
-                if(!m.getSituacao().equals("Finalizada")){
-                    throw new RuntimeException("ERRO: esse técnico possui manutenções em aberto!");
-                }
-            }
-        }
 
         repository.delete(id);
     }

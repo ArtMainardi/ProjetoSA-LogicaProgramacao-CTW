@@ -3,6 +3,7 @@ package projetoSA.repository;
 import java.util.ArrayList;
 import java.util.List;
 import projetoSA.model.Manutencao;
+import projetoSA.model.Tecnico;
 
 public class ManutencaoRepository {
     final ArrayList<Manutencao> manutencoes;
@@ -48,7 +49,6 @@ public class ManutencaoRepository {
                 man.add(m);
             }
         }
-        return man;
     }
 
     // UPDATE:

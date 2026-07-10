@@ -40,16 +40,7 @@ public class ManutencaoRepository {
     }
 
     // READ (TÉCNICO ID):
-    public List<Manutencao> readTecnicoId(int id){
-        ArrayList<Manutencao> man = new ArrayList<>();
-        // Procura as manutenções com o ID do técnico informado:
-        for(Manutencao m : manutencoes){
-            if(m.getTecnico().getCodigo() == id){
-                man.add(m);
-            }
-        }
-        return man;
-    }
+    
 
     // UPDATE:
     public Manutencao update(Manutencao modifiedManutencao){
