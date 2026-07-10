@@ -92,7 +92,6 @@ public class Manutencao {
 
     // Métodos:
     public String detalhes(){
-        return codigo + " | " + equipamento.getNome() + " (" + equipamento.getCodigo() + ")  | " + tecnico.getNome() + " (" + tecnico.getCodigo() + ")  | " 
-            + dataAbertura + " | " + dataEncerramento + " | " + tipoManutencao + " | " +  situacao + " | " + descricao;
+        return codigo + " | " + equipamento.getNome()
     }
 }

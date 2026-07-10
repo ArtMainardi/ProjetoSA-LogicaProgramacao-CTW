@@ -101,7 +101,7 @@ public class ManutencoesMain {
         System.out.print("Tipo da manutenção ('Preventiva' ou 'Corretiva'): ");
         String tipoManutencao = sc.nextLine();
 
-        // Verifica descrição:
+        
         System.out.print("Descricao dessa manutenção (0 para 'Sem descrição'): ");
         String descricao = sc.nextLine();
         if(descricao.equals("0")){

@@ -30,7 +30,6 @@ public class ManutencoesMain {
         // Outras variáveis:
         int option = -1;
         Manutencao m;
-        int codigo;
 
         // Menu de opções de manutenções:
         do {
@@ -55,17 +54,7 @@ public class ManutencoesMain {
                         sty.quadro("Manutenção criada com sucesso!");
                         Main.continuar();
                         break;
-                    case 2: // Consultar técnico pelo código:
-                        Main.clear();
-                        sty.quadro("Consultar Manutenção");
-                        System.out.print("Digite o código da manutenção: ");
-                        codigo = Integer.parseInt(sc.nextLine().trim());
-                        // Envia a requisição para o service:
-                        m = service.buscarId(codigo);
-                        sty.titulo("Codigo | Nome Equipamento (ID) | Nome Técnico (ID) | Data Abertura | Data Encerramento | Tipo | Situação | Descrição");
-                        sty.lista(m.detalhes());
-                        Main.continuar();
-                        break;
+                    
                     case 0:
                         break;
                     default:
@@ -100,14 +89,8 @@ public class ManutencoesMain {
         String dataAbertura = sc.nextLine();
         System.out.print("Tipo da manutenção ('Preventiva' ou 'Corretiva'): ");
         String tipoManutencao = sc.nextLine();
-
-        // Verifica descrição:
         System.out.print("Descricao dessa manutenção (0 para 'Sem descrição'): ");
         String descricao = sc.nextLine();
-        if(descricao.equals("0")){
-            descricao = "Sem descrição";
-        }
-
         System.out.print("Situação dela ('Aberta', 'Em andamento' ou 'Finalizada'): ");
         String situacao = sc.nextLine();
 
