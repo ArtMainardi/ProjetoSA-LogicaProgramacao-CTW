@@ -126,9 +126,9 @@ public class EquipamentosMain {
         String modelo = sc.nextLine();
         System.out.print("Setor Instalado: " + e.getSetorInstalado() + " -> ");
         String nsetorInstalado = sc.nextLine();
-        System.out.print("Data Instalado (DD/MM/AAAA): " + e.getDataInstalacao() + " -> ");
+        System.out.print("Data Instalado (DD/MM/AAAA): ");
         String dataInstalado = sc.nextLine();
-        System.out.print("Status ('Operando', 'Em manutencao' ou 'Inativo'): " + e.getStatus() + " -> ");
+        System.out.print("Status desse equipamento ('Operando', 'Em manutencao' ou 'Inativo'): ");
         String status = sc.nextLine();
 
         // Retorna objeto criado:

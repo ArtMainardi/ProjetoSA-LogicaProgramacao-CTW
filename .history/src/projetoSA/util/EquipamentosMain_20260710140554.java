@@ -128,7 +128,7 @@ public class EquipamentosMain {
         String nsetorInstalado = sc.nextLine();
         System.out.print("Data Instalado (DD/MM/AAAA): " + e.getDataInstalacao() + " -> ");
         String dataInstalado = sc.nextLine();
-        System.out.print("Status ('Operando', 'Em manutencao' ou 'Inativo'): " + e.getStatus() + " -> ");
+        System.out.print("Status desse equipamento ('Operando', 'Em manutencao' ou 'Inativo'): ");
         String status = sc.nextLine();
 
         // Retorna objeto criado:

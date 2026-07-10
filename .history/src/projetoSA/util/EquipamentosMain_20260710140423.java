@@ -67,8 +67,7 @@ public class EquipamentosMain {
                         // Recebe novos dados:
                         equip = atualizar(equip);
                         // Envia a requisição para o service:
-                        service.atualizar(equip, codigo);
-                        sty.quadro("Equipamento atualizado com sucesso!");
+                        service.atualizar(novoEquipamento, option)
                         Main.continuar();
                         break;
                     case 0:
@@ -116,19 +115,19 @@ public class EquipamentosMain {
         sty.quadro("Atualizar Equipamento");
 
         // Recebe dados:
-        System.out.print("Nome: " + e.getNome() + " -> ");
+        System.out.print("Nome: ");
         String nome = sc.nextLine();
-        System.out.print("Categoria: " + e.getCategoria() + " -> ");
+        System.out.print("Categoria dele: ");
         String categoria = sc.nextLine();
-        System.out.print("Fabricante: " + e.getFabricante() + " -> ");
+        System.out.print("Fabricante dele: ");
         String fabricante = sc.nextLine();
-        System.out.print("Modelo: " + e.getModelo() + " -> ");
+        System.out.print("Modelo do novo equipamento: ");
         String modelo = sc.nextLine();
-        System.out.print("Setor Instalado: " + e.getSetorInstalado() + " -> ");
+        System.out.print("Setor onde foi instalado: ");
         String nsetorInstalado = sc.nextLine();
-        System.out.print("Data Instalado (DD/MM/AAAA): " + e.getDataInstalacao() + " -> ");
+        System.out.print("Data em que foi instalado (DD/MM/AAAA): ");
         String dataInstalado = sc.nextLine();
-        System.out.print("Status ('Operando', 'Em manutencao' ou 'Inativo'): " + e.getStatus() + " -> ");
+        System.out.print("Status desse equipamento ('Operando', 'Em manutencao' ou 'Inativo'): ");
         String status = sc.nextLine();
 
         // Retorna objeto criado:

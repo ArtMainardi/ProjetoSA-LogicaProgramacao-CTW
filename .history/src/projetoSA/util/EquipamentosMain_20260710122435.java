@@ -19,9 +19,6 @@ public class EquipamentosMain {
         sty = style;
         sc = scanner;
         service = new EquipamentoService(d);
-        // Outras variáveis:
-        int codigo;
-        Equipamento equip;
 
         // Menu de opções: 
         int option = -1;
@@ -51,24 +48,20 @@ public class EquipamentosMain {
                         Main.clear();
                         sty.quadro("Consultar Equipamento");
                         System.out.print("Digite o código do equipamento: ");
-                        codigo = Integer.parseInt(sc.nextLine().trim());
+                        int codigo = Integer.parseInt(sc.nextLine().trim());
                         // Envia a requisição para o service:
-                        equip = service.buscarId(codigo);
-                        sty.quadro(equip.getCodigo() + " | " + equip.getNome() + " | " + equip.getModelo() + " | " + equip.getStatus());
+                        Equipamento e = service.buscarId(codigo);
+                        sty.quadro(e.getCodigo() + " | " + e.getNome() + " | " + e.getModelo() + " | " + e.getStatus());
                         Main.continuar();
                         break;
-                    case 3: // Atualizar equipamento:
+                    case 3: // Atualizar equipamento pelo código:
                         Main.clear();
-                        sty.quadro("Modificar Equipamento");
+                        sty.quadro("Consultar Equipamento");
                         System.out.print("Digite o código do equipamento: ");
-                        codigo = Integer.parseInt(sc.nextLine().trim());
-                        // Procura o equipamento pelo service:
-                        equip = service.buscarId(codigo);
-                        // Recebe novos dados:
-                        equip = atualizar(equip);
+                        int codigo = Integer.parseInt(sc.nextLine().trim());
                         // Envia a requisição para o service:
-                        service.atualizar(equip, codigo);
-                        sty.quadro("Equipamento atualizado com sucesso!");
+                        Equipamento e = service.buscarId(codigo);
+                        sty.quadro(e.getCodigo() + " | " + e.getNome() + " | " + e.getModelo() + " | " + e.getStatus());
                         Main.continuar();
                         break;
                     case 0:
@@ -104,31 +97,6 @@ public class EquipamentosMain {
         System.out.print("Data em que foi instalado (DD/MM/AAAA): ");
         String dataInstalado = sc.nextLine();
         System.out.print("Status desse equipamento ('Operando', 'Em manutencao' ou 'Inativo'): ");
-        String status = sc.nextLine();
-
-        // Retorna objeto criado:
-        return new Equipamento(nome, categoria, fabricante, modelo, nsetorInstalado, dataInstalado, status);
-    }
-
-    // Método que retorna 'Equipamento' com os novos dados para atualizar um equipamento:
-    public static Equipamento atualizar(Equipamento e){
-        Main.clear();
-        sty.quadro("Atualizar Equipamento");
-
-        // Recebe dados:
-        System.out.print("Nome: " + e.getNome() + " -> ");
-        String nome = sc.nextLine();
-        System.out.print("Categoria: " + e.getCategoria() + " -> ");
-        String categoria = sc.nextLine();
-        System.out.print("Fabricante: " + e.getFabricante() + " -> ");
-        String fabricante = sc.nextLine();
-        System.out.print("Modelo: " + e.getModelo() + " -> ");
-        String modelo = sc.nextLine();
-        System.out.print("Setor Instalado: " + e.getSetorInstalado() + " -> ");
-        String nsetorInstalado = sc.nextLine();
-        System.out.print("Data Instalado (DD/MM/AAAA): " + e.getDataInstalacao() + " -> ");
-        String dataInstalado = sc.nextLine();
-        System.out.print("Status ('Operando', 'Em manutencao' ou 'Inativo'): " + e.getStatus() + " -> ");
         String status = sc.nextLine();
 
         // Retorna objeto criado:
