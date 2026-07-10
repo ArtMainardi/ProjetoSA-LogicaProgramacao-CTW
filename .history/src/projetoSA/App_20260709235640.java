@@ -26,15 +26,13 @@ public class App {
 
             try{
                 switch (option) {
-                    case 1:
-                        break;
-                    case 0:
-                        break;
-                    default:
-                        throw new Exception("ERRO: opção digitada inválida!");
-                }
-            } catch(Exception e){
-                sty.quadro(e.getMessage());
+                case 1:
+                    break;
+                case 0:
+                    break;
+                default:
+                    throw new Exception("ERRO: opção digitada inválida!");
+            }
             }
         } while(option != 0);
     }

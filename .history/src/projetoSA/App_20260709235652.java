@@ -33,9 +33,7 @@ public class App {
                     default:
                         throw new Exception("ERRO: opção digitada inválida!");
                 }
-            } catch(Exception e){
-                sty.quadro(e.getMessage());
-            }
+            } catch(E)
         } while(option != 0);
     }
 }

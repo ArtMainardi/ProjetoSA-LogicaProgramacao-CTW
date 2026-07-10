@@ -24,17 +24,13 @@ public class App {
             );
             option = sc.nextInt();
 
-            try{
-                switch (option) {
-                    case 1:
-                        break;
-                    case 0:
-                        break;
-                    default:
-                        throw new Exception("ERRO: opção digitada inválida!");
-                }
-            } catch(Exception e){
-                sty.quadro(e.getMessage());
+            switch (option) {
+                case 1:
+                    break;
+                case 0:
+                    break;
+                default:
+                    throw new Exception("ERRO: opção digitada inválida");
             }
         } while(option != 0);
     }

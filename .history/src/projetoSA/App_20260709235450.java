@@ -23,19 +23,6 @@ public class App {
                             + "0- Sair \n"
             );
             option = sc.nextInt();
-
-            try{
-                switch (option) {
-                    case 1:
-                        break;
-                    case 0:
-                        break;
-                    default:
-                        throw new Exception("ERRO: opção digitada inválida!");
-                }
-            } catch(Exception e){
-                sty.quadro(e.getMessage());
-            }
         } while(option != 0);
     }
 }

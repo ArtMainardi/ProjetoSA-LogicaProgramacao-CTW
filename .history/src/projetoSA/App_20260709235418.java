@@ -19,23 +19,7 @@ public class App {
                             + "1- Gerenciamento de Equipamentos \n"
                             + "2- Gerenciamento  de Técnicos \n"
                             + "3- Controle de Manutenções \n"
-                            + "4- Relatórios \n"
-                            + "0- Sair \n"
             );
-            option = sc.nextInt();
-
-            try{
-                switch (option) {
-                    case 1:
-                        break;
-                    case 0:
-                        break;
-                    default:
-                        throw new Exception("ERRO: opção digitada inválida!");
-                }
-            } catch(Exception e){
-                sty.quadro(e.getMessage());
-            }
         } while(option != 0);
     }
 }

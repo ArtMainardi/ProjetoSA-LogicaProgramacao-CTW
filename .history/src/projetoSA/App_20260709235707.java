@@ -34,7 +34,7 @@ public class App {
                         throw new Exception("ERRO: opção digitada inválida!");
                 }
             } catch(Exception e){
-                sty.quadro(e.getMessage());
+                sty.quadro(e.get);
             }
         } while(option != 0);
     }
