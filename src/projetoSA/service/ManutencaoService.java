@@ -26,7 +26,7 @@ public class ManutencaoService {
         // Verifica integridade do 'equipamento' aqui:
         Equipamento e = eService.buscarId(objeto.getEquipamento().getCodigo());
         // Verifica disponibilidade do 'equipamento':
-        if(e.getStatus().equals("Em manutenção")){
+        if(e.getStatus().equals("Em manutencao")){
             throw new RuntimeException("ERRO: o equipamento informado já possui uma manutenção em aberto!");
         }
 
@@ -37,7 +37,7 @@ public class ManutencaoService {
         }
 
         // Verificar valores de 'tipoMovimentacao':
-        if(!objeto.getTipoManutencao().equals("Preventiva") && !objeto.getTipoManutencao().equals("Preventiva")){
+        if(!objeto.getTipoManutencao().equals("Preventiva") && !objeto.getTipoManutencao().equals("Corretiva")){
             throw new RuntimeException("ERRO: valor de 'tipo de movimentação' inválido!");
         }
 
@@ -47,7 +47,7 @@ public class ManutencaoService {
         }
         
         // Atualiza status de 'equipamento':
-        e.setStatus("Em manutenção");
+        e.setStatus("Em manutencao");
         return repository.create(objeto);
     }
 
@@ -87,7 +87,7 @@ public class ManutencaoService {
         // Verifica integridade do novo 'equipamento':
         Equipamento e = eService.buscarId(modifiedManutencao.getEquipamento().getCodigo());
         // Verifica disponibilidade do novo 'equipamento':
-        if(e.getStatus().equals("Em manutenção")){
+        if(e.getStatus().equals("Em manutencao")){
             throw new RuntimeException("ERRO: o equipamento informado já possui uma manutenção em aberto!");
         }
 
@@ -98,7 +98,7 @@ public class ManutencaoService {
         }
 
         // Verificar valores de 'tipoMovimentacao':
-        if(!modifiedManutencao.getTipoManutencao().equals("Preventiva") && !modifiedManutencao.getTipoManutencao().equals("Preventiva")){
+        if(!modifiedManutencao.getTipoManutencao().equals("Preventiva") && !modifiedManutencao.getTipoManutencao().equals("Corretiva")){
             throw new RuntimeException("ERRO: valor de 'tipo de movimentação' inválido!");
         }
 
@@ -111,7 +111,7 @@ public class ManutencaoService {
         // Atualiza status dos equipamentos (antigo e novo, se forem diferentes):
         if(objeto.getEquipamento() != e){
             objeto.getEquipamento().setStatus("Operando");
-            e.setStatus("Em manutenção");
+            e.setStatus("Em manutencao");
         }
         
         modifiedManutencao.setCodigo(id);
@@ -136,11 +136,11 @@ public class ManutencaoService {
         if(status.equals("Aberta")){
             if(objeto.getSituacao().equals("Finalizada")){
                 // Verifica disponibilidade do 'equipamento':
-                if(e.getStatus().equals("Em manutenção")){
+                if(e.getStatus().equals("Em manutencao")){
                     throw new RuntimeException("ERRO: o equipamento informado já possui uma manutenção em aberto!");
                 }
                 // Atualiza status de 'equipamento':
-                e.setStatus("Em manutenção");
+                e.setStatus("Em manutencao");
             }
         } else if(status.equals("Finalizada")){
             // Atualiza status de 'equipamento':
