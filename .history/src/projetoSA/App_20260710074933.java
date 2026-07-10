@@ -12,6 +12,7 @@ public class App {
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) throws Exception {
+        // Menu de opões:
         int option;
         do{
             sty.titulo("Gerenciador de Equipamentos e Manutenções");
