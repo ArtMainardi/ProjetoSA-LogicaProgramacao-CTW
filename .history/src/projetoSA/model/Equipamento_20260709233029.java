@@ -7,7 +7,7 @@ public class Equipamento {
     private String modelo;
     private String setorInstalado;
     private String dataInstalacao;
-    private String status; // ('Operando', 'Em manutencao' ou 'Inativo')
+    private String status; // ('Operando', 'Em manutenção' ou 'Inativo')
 
     // Construtor sem ID (cria um novo objeto com o ID gerado pelo repository):
     public Equipamento(String nome, String categoria, String fabricante, String modelo,
