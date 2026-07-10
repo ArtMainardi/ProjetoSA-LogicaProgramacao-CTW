@@ -12,7 +12,7 @@ public class ManutencaoService {
     final ManutencaoRepository repository;
     final EquipamentoService eService;
     final TecnicoService tService;
-    final DateTimeFormatter formatador = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+    final DateTIme formatador = new DateTimeFormatter()
     // Construtor:
     public ManutencaoService(Dados d){
         repository = new ManutencaoRepository(d);
@@ -31,7 +31,7 @@ public class ManutencaoService {
         if(e.getStatus().equals("Em manutencao")){
             throw new RuntimeException("ERRO: o equipamento informado já possui uma manutenção em aberto!");
         }
-        
+
         // Verificando integridade dos dados:
         if(objeto.getDataAbertura().trim().isEmpty() || objeto.getDataEncerramento().trim().isEmpty() 
                 || objeto.getTipoManutencao().trim().isEmpty() || objeto.getSituacao().trim().isEmpty()){
@@ -139,7 +139,7 @@ public class ManutencaoService {
             if(status.equals("Finalizada")){
                 // Atualiza status de 'equipamento':
                 e.setStatus("Operando");
-                objeto.setDataEncerramento(LocalDate.now().format(formatador));
+                objeto.setDataEncerramento(LocalDate.now().format(formatter));
             } else if(!status.equals("Em andamento") && !status.equals("Aberta")){
                 throw new RuntimeException("ERRO: valor de 'situacao' inválido!");
             }
