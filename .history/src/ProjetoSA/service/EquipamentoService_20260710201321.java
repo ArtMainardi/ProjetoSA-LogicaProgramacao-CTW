@@ -74,7 +74,7 @@ public class EquipamentoService {
         }
         
         // Verifica data informada:
-        LocalDate validacao = LocalDate.parse(modifiedEquipamento.getDataInstalacao(), formatador);
+        LocalDate validacao = LocalDate.parse(newEquipamento.getDataInstalacao(), formatador);
 
         // Atualiza:
         modifiedEquipamento.setCodigo(id);

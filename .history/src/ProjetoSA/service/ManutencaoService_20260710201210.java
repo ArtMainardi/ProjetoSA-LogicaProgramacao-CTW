@@ -32,6 +32,9 @@ public class ManutencaoService {
             throw new RuntimeException("ERRO: o equipamento informado já possui uma manutenção em aberto!");
         }
         
+        // Verifica data informada:
+        LocalDate validacao = LocalDate.parse(objeto.getDataAbertura(), formatador);
+        
         // Verificando integridade dos dados:
         if(objeto.getDataAbertura().trim().isEmpty() || objeto.getDataEncerramento().trim().isEmpty() 
                 || objeto.getTipoManutencao().trim().isEmpty() || objeto.getSituacao().trim().isEmpty()){
@@ -47,9 +50,6 @@ public class ManutencaoService {
         if(!objeto.getSituacao().equals("Aberta") && !objeto.getSituacao().equals("Em andamento") && !objeto.getSituacao().equals("Finalizada")){
             throw new RuntimeException("ERRO: valor de 'situacao' inválido!");
         }
-        
-        // Verifica data informada:
-        LocalDate validacao = LocalDate.parse(objeto.getDataAbertura(), formatador);
         
         // Atualiza status de 'equipamento':
         e.setStatus("Em manutencao");

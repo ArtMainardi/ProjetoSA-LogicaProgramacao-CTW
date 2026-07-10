@@ -1,6 +1,5 @@
 package projetoSA.service;
 
-import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import projetoSA.model.Equipamento;
@@ -28,9 +27,6 @@ public class EquipamentoService {
         if(!status.equals("Operando") && !status.equals("Em manutencao") && !status.equals("Inativo")){
             throw new RuntimeException("ERRO: valor de 'status' inválido!");
         }
-
-        // Verifica data informada:
-        LocalDate validacao = LocalDate.parse(newEquipamento.getDataInstalacao(), formatador);
 
         // Cria:
         Equipamento equipamento = repository.create(newEquipamento);
@@ -72,9 +68,6 @@ public class EquipamentoService {
         if(!status.equals("Operando") && !status.equals("Em manutencao") && !status.equals("Inativo")){
             throw new RuntimeException("ERRO: valor de 'status' inválido!");
         }
-        
-        // Verifica data informada:
-        LocalDate validacao = LocalDate.parse(modifiedEquipamento.getDataInstalacao(), formatador);
 
         // Atualiza:
         modifiedEquipamento.setCodigo(id);

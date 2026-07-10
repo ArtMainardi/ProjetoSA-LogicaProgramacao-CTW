@@ -32,6 +32,9 @@ public class ManutencaoService {
             throw new RuntimeException("ERRO: o equipamento informado já possui uma manutenção em aberto!");
         }
         
+        // Verifica data informada:
+        LocalDate validacao = LocalDate.parse(objeto.getDataAbertura(), formatador);
+        
         // Verificando integridade dos dados:
         if(objeto.getDataAbertura().trim().isEmpty() || objeto.getDataEncerramento().trim().isEmpty() 
                 || objeto.getTipoManutencao().trim().isEmpty() || objeto.getSituacao().trim().isEmpty()){
