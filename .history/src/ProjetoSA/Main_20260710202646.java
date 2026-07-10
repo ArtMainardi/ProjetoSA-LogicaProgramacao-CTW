@@ -1,10 +1,10 @@
 package projetoSA;
 
+import java.util.HashMap;
 import java.util.Scanner;
 import projetoSA.repository.Dados;
 import projetoSA.util.EquipamentosMain;
 import projetoSA.util.ManutencoesMain;
-import projetoSA.util.Relatorio;
 import projetoSA.util.Style;
 import projetoSA.util.TecnicosMain;
 
@@ -14,7 +14,8 @@ public class Main {
     static Style sty = new Style();
     static Scanner sc = new Scanner(System.in);
     // Relatório:
-    Relatorio relatorio = new Relatorio();
+    static HashMap<String, Integer> relatorio = new HashMap<>();
+
 
     public static void main(String[] args) throws Exception {
         // Definindo variáveis do relatório:

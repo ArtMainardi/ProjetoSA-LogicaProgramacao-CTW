@@ -38,7 +38,7 @@ public class Main {
                     case 1:
                         clear();
                         // Direciona para o bloco/menu dos equipamentos:
-                        EquipamentosMain.equipamentos(dados, sty, sc);
+                        EquipamentosMain.equipamentos(dados, sty, sc, rela);
                         break;
                     case 2:
                         clear();

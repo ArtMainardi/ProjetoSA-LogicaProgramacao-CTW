@@ -38,12 +38,12 @@ public class Main {
                     case 1:
                         clear();
                         // Direciona para o bloco/menu dos equipamentos:
-                        EquipamentosMain.equipamentos(dados, sty, sc);
+                        EquipamentosMain.equipamentos(dados, sty, sc, relatorio);
                         break;
                     case 2:
                         clear();
                         // Direciona para o bloco/menu dos técnicos:
-                        TecnicosMain.tecnicos(dados, sty, sc);
+                        TecnicosMain.tecnicos(dados, sty, sc, relatorio);
                         break;
                     case 3:
                         clear();

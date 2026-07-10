@@ -1,10 +1,10 @@
 package projetoSA;
 
+import java.util.HashMap;
 import java.util.Scanner;
 import projetoSA.repository.Dados;
 import projetoSA.util.EquipamentosMain;
 import projetoSA.util.ManutencoesMain;
-import projetoSA.util.Relatorio;
 import projetoSA.util.Style;
 import projetoSA.util.TecnicosMain;
 
@@ -13,12 +13,13 @@ public class Main {
     static Dados dados = new Dados();
     static Style sty = new Style();
     static Scanner sc = new Scanner(System.in);
-    // Relatório:
-    Relatorio relatorio = new Relatorio();
+
+    // Definindo variáveis do relatório:
+    static HashMap<String, Integer> relatorio = new HashMap<>();
+    relatorio.put("qtdEquipamentos", 0)
+    
 
     public static void main(String[] args) throws Exception {
-        // Definindo variáveis do relatório:
-
         // Menu de opções:
         int option = -1;
         do{
