@@ -45,6 +45,7 @@ public class TecnicosMain {
                         // Envia o objeto criado para o service:
                         service.salvar(tec);
                         sty.quadro("Técnico criado com sucesso!");
+                    Main.continuar();
                         break;
                     case 2: // Consultar técnico pelo código:
                         Main.clear();
@@ -55,6 +56,7 @@ public class TecnicosMain {
                         tec = service.buscarId(codigo);
                         sty.titulo("Codigo | Nome | Matrícula | Setor | Telefone");
                         sty.lista(tec.detalhes());
+                    Main.continuar();
                         break;
                     case 3: // Atualizar técnico:
                         Main.clear();
@@ -68,13 +70,23 @@ public class TecnicosMain {
                         // Envia a requisição para o service:
                         service.atualizar(tec, codigo);
                         sty.quadro("Técnico atualizado com sucesso!");
+                    Main.continuar();
+                        break;
+                    case 4: // Excluir técnico pelo código:
+                        Main.clear();
+                        sty.quadro("Excluir Técnico");
+                        System.out.print("Digite o código do técnico: ");
+                        codigo = Integer.parseInt(sc.nextLine().trim());
+                        // Envia a requisição para o service:
+                        service.deletar(codigo);
+                        sty.quadro("Técnico deletado com sucesso!");
+                        Main.continuar();
                         break;
                     case 0: // Voltar
                         break;
                     default:
                         throw new Exception("ERRO: opção digitada inválida!");
                 }
-                Main.continuar();
                 Main.clear();
             } catch (Exception e) {
                 sty.quadro(e.getMessage());
