@@ -78,7 +78,6 @@ public class EquipamentosMain {
                         codigo = Integer.parseInt(sc.nextLine().trim());
                         // Envia a requisição para o service:
                         service.deletar(codigo);
-                        sty.quadro("Equipamento deletado com sucesso!");
                         Main.continuar();
                         break;
                     case 0:

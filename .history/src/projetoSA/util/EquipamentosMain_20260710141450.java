@@ -71,14 +71,18 @@ public class EquipamentosMain {
                         sty.quadro("Equipamento atualizado com sucesso!");
                         Main.continuar();
                         break;
-                    case 4: // Excluir equipamento pelo código:
+                    case 3: // Atualizar equipamento:
                         Main.clear();
-                        sty.quadro("Excluir Equipamento");
+                        sty.quadro("Modificar Equipamento");
                         System.out.print("Digite o código do equipamento: ");
                         codigo = Integer.parseInt(sc.nextLine().trim());
+                        // Procura o equipamento pelo service:
+                        equip = service.buscarId(codigo);
+                        // Recebe novos dados:
+                        equip = atualizar(equip);
                         // Envia a requisição para o service:
-                        service.deletar(codigo);
-                        sty.quadro("Equipamento deletado com sucesso!");
+                        service.atualizar(equip, codigo);
+                        sty.quadro("Equipamento atualizado com sucesso!");
                         Main.continuar();
                         break;
                     case 0:

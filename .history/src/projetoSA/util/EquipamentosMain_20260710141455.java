@@ -71,16 +71,6 @@ public class EquipamentosMain {
                         sty.quadro("Equipamento atualizado com sucesso!");
                         Main.continuar();
                         break;
-                    case 4: // Excluir equipamento pelo código:
-                        Main.clear();
-                        sty.quadro("Excluir Equipamento");
-                        System.out.print("Digite o código do equipamento: ");
-                        codigo = Integer.parseInt(sc.nextLine().trim());
-                        // Envia a requisição para o service:
-                        service.deletar(codigo);
-                        sty.quadro("Equipamento deletado com sucesso!");
-                        Main.continuar();
-                        break;
                     case 0:
                         break;
                     default:
