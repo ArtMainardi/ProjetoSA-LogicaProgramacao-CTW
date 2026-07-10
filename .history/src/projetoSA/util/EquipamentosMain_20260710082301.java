@@ -49,20 +49,10 @@ public class EquipamentosMain {
                         }
                         Main.continuar();
                         break;
-                    case 2: // Consultar equipamento pelo código:
+                    case 2: // Consultar equipamento 
                         Main.clear();
                         sty.quadro("Consultar Equipamento");
-                        System.out.print("Digite o código do equipamento: ");
-                        int codigo = sc.nextInt();
-                        sc.nextLine();
-                        // Envia a requisição para o service:
-                        try{
-                            Equipamento e = service.buscarId(codigo);
-                            sty.quadro(e.getCodigo() + " | " + e.getNome() + " | " + e.getModelo() + " | " + e.getStatus());
-                        } catch(Exception e){
-                            sty.quadro(e.getMessage());
-                        }
-                        Main.continuar();
+
                         break;
                     case 0:
                         break;

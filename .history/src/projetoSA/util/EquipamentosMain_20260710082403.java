@@ -54,15 +54,7 @@ public class EquipamentosMain {
                         sty.quadro("Consultar Equipamento");
                         System.out.print("Digite o código do equipamento: ");
                         int codigo = sc.nextInt();
-                        sc.nextLine();
-                        // Envia a requisição para o service:
-                        try{
-                            Equipamento e = service.buscarId(codigo);
-                            sty.quadro(e.getCodigo() + " | " + e.getNome() + " | " + e.getModelo() + " | " + e.getStatus());
-                        } catch(Exception e){
-                            sty.quadro(e.getMessage());
-                        }
-                        Main.continuar();
+                        // Envia a requisição para o
                         break;
                     case 0:
                         break;
