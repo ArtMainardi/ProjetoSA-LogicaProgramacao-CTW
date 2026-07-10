@@ -21,37 +21,47 @@ public class EquipamentosMain {
         service = new EquipamentoService(d);
 
         // Menu de opções: 
-        int option = -1;
+        int option;
         do{
-            try{
-                sty.titulo("Gerenciar Equipamentos");
-                System.out.println("Digite uma opção: \n"
-                                + "1- Cadastrar equipamento \n"
-                                + "2- Consultar equipamento pelo código \n"
-                                + "3- Alterar informações \n"
-                                + "4- Excluir equipamento \n"
-                                + "5- Listar todos os equipamentos cadastrados \n"
-                                + "0- Voltar"
-                );
-                option = Integer.parseInt(sc.nextLine().trim());
+            sty.titulo("Gerenciar Equipamentos");
+            System.out.println("Digite uma opção: \n"
+                            + "1- Cadastrar equipamento \n"
+                            + "2- Consultar equipamento pelo código \n"
+                            + "3- Alterar informações \n"
+                            + "4- Excluir equipamento \n"
+                            + "5- Listar todos os equipamentos cadastrados \n"
+                            + "0- Voltar"
+            );
+            option = sc.nextInt();
+            sc.nextLine();
 
-                // Switch-case para analisar a resposta do usuário:
+            // Switch-case para analisar a resposta do usuário:
+            
                 switch (option) {
                     case 1: // Cadastrar um novo equipamento:
                         Equipamento novoEquipamento = cadastrar();
                         // Envia o objeto criado para o service:
-                        service.adicionar(novoEquipamento);
-                        sty.quadro("Equipamento criado com sucesso!");
+                        try{
+                            service.adicionar(novoEquipamento);
+                            sty.quadro("Equipamento criado com sucesso!");
+                        } catch(Exception e){
+                            sty.quadro(e.getMessage());
+                        }
                         Main.continuar();
                         break;
                     case 2: // Consultar equipamento pelo código:
                         Main.clear();
                         sty.quadro("Consultar Equipamento");
                         System.out.print("Digite o código do equipamento: ");
-                        int codigo = Integer.parseInt(sc.nextLine().trim());
+                        int codigo = sc.nextInt();
+                        sc.nextLine();
                         // Envia a requisição para o service:
-                        Equipamento e = service.buscarId(codigo);
-                        sty.quadro(e.getCodigo() + " | " + e.getNome() + " | " + e.getModelo() + " | " + e.getStatus());
+                        try{
+                            Equipamento e = service.buscarId(codigo);
+                            sty.quadro(e.getCodigo() + " | " + e.getNome() + " | " + e.getModelo() + " | " + e.getStatus());
+                        } catch(Exception e){
+                            sty.quadro(e.getMessage());
+                        }
                         Main.continuar();
                         break;
                     case 0:

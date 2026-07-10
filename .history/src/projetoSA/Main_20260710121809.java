@@ -26,6 +26,7 @@ public class Main {
                                 + "0- Sair \n"
                 );
                 option = Integer.parseInt(sc.nextLine().trim());
+                sc.nextLine();
 
                 // Switch-case com try-catch para analisar a resposta do usuário:
                 switch (option) {

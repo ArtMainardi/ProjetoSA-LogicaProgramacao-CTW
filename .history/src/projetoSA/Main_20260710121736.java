@@ -14,7 +14,7 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
         // Menu de opções:
-        int option = -1;
+        int option;
         do{
             try{
                 sty.titulo("Gerenciador de Equipamentos e Manutenções");
@@ -25,7 +25,8 @@ public class Main {
                                 + "4- Relatórios \n"
                                 + "0- Sair \n"
                 );
-                option = Integer.parseInt(sc.nextLine().trim());
+                option = sc.nextInt();
+                sc.nextLine();
 
                 // Switch-case com try-catch para analisar a resposta do usuário:
                 switch (option) {

@@ -50,8 +50,8 @@ public class EquipamentosMain {
                         System.out.print("Digite o código do equipamento: ");
                         int codigo = Integer.parseInt(sc.nextLine().trim());
                         // Envia a requisição para o service:
-                        Equipamento e = service.buscarId(codigo);
-                        sty.quadro(e.getCodigo() + " | " + e.getNome() + " | " + e.getModelo() + " | " + e.getStatus());
+                            Equipamento e = service.buscarId(codigo);
+                            sty.quadro(e.getCodigo() + " | " + e.getNome() + " | " + e.getModelo() + " | " + e.getStatus());
                         Main.continuar();
                         break;
                     case 0:

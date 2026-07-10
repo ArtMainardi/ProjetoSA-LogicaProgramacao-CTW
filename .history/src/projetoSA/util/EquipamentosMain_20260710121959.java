@@ -40,18 +40,23 @@ public class EquipamentosMain {
                     case 1: // Cadastrar um novo equipamento:
                         Equipamento novoEquipamento = cadastrar();
                         // Envia o objeto criado para o service:
-                        service.adicionar(novoEquipamento);
-                        sty.quadro("Equipamento criado com sucesso!");
+                            service.adicionar(novoEquipamento);
+                            sty.quadro("Equipamento criado com sucesso!");
                         Main.continuar();
                         break;
                     case 2: // Consultar equipamento pelo código:
                         Main.clear();
                         sty.quadro("Consultar Equipamento");
                         System.out.print("Digite o código do equipamento: ");
-                        int codigo = Integer.parseInt(sc.nextLine().trim());
+                        int codigo = sc.nextInt();
+                        sc.nextLine();
                         // Envia a requisição para o service:
-                        Equipamento e = service.buscarId(codigo);
-                        sty.quadro(e.getCodigo() + " | " + e.getNome() + " | " + e.getModelo() + " | " + e.getStatus());
+                        try{
+                            Equipamento e = service.buscarId(codigo);
+                            sty.quadro(e.getCodigo() + " | " + e.getNome() + " | " + e.getModelo() + " | " + e.getStatus());
+                        } catch(Exception e){
+                            sty.quadro(e.getMessage());
+                        }
                         Main.continuar();
                         break;
                     case 0:
