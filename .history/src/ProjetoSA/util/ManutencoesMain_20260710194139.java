@@ -94,8 +94,7 @@ public class ManutencoesMain {
                         break;
                     case 5: // Lista todas as manutenções:
                         List<Manutencao> manutencoes = service.listar();
-                        listar(manutencoes);
-                        Main.continuar();
+                        listar(manutencoes)
                         break;
                     case 0:
                         break;

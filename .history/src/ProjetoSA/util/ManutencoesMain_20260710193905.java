@@ -1,6 +1,5 @@
 package projetoSA.util;
 
-import java.util.List;
 import java.util.Scanner;
 import projetoSA.Main;
 import projetoSA.model.Equipamento;
@@ -92,10 +91,8 @@ public class ManutencoesMain {
                         sty.quadro("Manutenção finalizada com sucesso!");
                         Main.continuar();
                         break;
-                    case 5: // Lista todas as manutenções:
-                        List<Manutencao> manutencoes = service.listar();
-                        listar(manutencoes);
-                        Main.continuar();
+                    case 5: 
+
                         break;
                     case 0:
                         break;
@@ -165,14 +162,5 @@ public class ManutencoesMain {
                 throw new Exception("ERRO: opção digitada inválida!");
         }
         return novaSituacao;
-    }
-
-    // Procedimento que coloca todos os dados na tela:
-    public static void listar(List<Manutencao> manutencoes){
-        sty.titulo("Codigo | Nome Equipamento (ID) | Nome Técnico (ID) | Data Abertura | Data Encerramento | Tipo | Situação | Descrição");
-        for(Manutencao tec : manutencoes){
-            sty.lista(tec.detalhes());
-            System.out.println(); // Espaçamento
-        }
     }
 }
