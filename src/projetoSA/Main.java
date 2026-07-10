@@ -3,6 +3,7 @@ package projetoSA;
 import java.util.Scanner;
 import projetoSA.repository.Dados;
 import projetoSA.util.EquipamentosMain;
+import projetoSA.util.MovimentacoesMain;
 import projetoSA.util.Style;
 import projetoSA.util.TecnicosMain;
 
@@ -23,7 +24,7 @@ public class Main {
                                 + "2- Gerenciamento  de Técnicos \n"
                                 + "3- Controle de Manutenções \n"
                                 + "4- Relatórios \n"
-                                + "0- Sair \n"
+                                + "0- Sair"
                 );
                 option = Integer.parseInt(sc.nextLine().trim());
 
@@ -38,6 +39,11 @@ public class Main {
                         clear();
                         // Direciona para o bloco/menu dos técnicos:
                         TecnicosMain.tecnicos(dados, sty, sc);
+                        break;
+                    case 3:
+                        clear();
+                        // Direciona para o bloco/menu das movimentações:
+                        MovimentacoesMain.movimentacoes(dados, sty, sc);
                         break;
                     case 0:
                         break;
