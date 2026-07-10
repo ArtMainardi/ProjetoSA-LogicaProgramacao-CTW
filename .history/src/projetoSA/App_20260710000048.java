@@ -23,7 +23,6 @@ public class App {
                             + "0- Sair \n"
             );
             option = sc.nextInt();
-            sc.nextLine();
 
             try{
                 switch (option) {
@@ -34,11 +33,8 @@ public class App {
                     default:
                         throw new Exception("ERRO: opção digitada inválida!");
                 }
-                clear();
             } catch(Exception e){
                 sty.quadro(e.getMessage());
-                continuar();
-                clear();
             }
         } while(option != 0);
     }
@@ -55,7 +51,6 @@ public class App {
             System.out.println();
         }
         System.out.print("\033[H\033[2J");
-        System.out.flush();
-        System.out.println("\n\n\n");
+        System.out.flush
     }
 }

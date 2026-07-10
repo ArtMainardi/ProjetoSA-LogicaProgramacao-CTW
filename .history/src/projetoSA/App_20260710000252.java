@@ -23,7 +23,6 @@ public class App {
                             + "0- Sair \n"
             );
             option = sc.nextInt();
-            sc.nextLine();
 
             try{
                 switch (option) {
@@ -46,7 +45,7 @@ public class App {
     // Procedimento que pede confirmação para o usuário para então continuar com o programa:
     public static void continuar(){
         System.out.println("Pressione ENTER para continuar..");
-        sc.nextLine();
+        sc.nextLine().t;
     }
 
     // Procedimento que limpa a tela:
@@ -56,6 +55,6 @@ public class App {
         }
         System.out.print("\033[H\033[2J");
         System.out.flush();
-        System.out.println("\n\n\n");
+        System.out.println("\n");
     }
 }

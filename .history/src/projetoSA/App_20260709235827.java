@@ -23,7 +23,6 @@ public class App {
                             + "0- Sair \n"
             );
             option = sc.nextInt();
-            sc.nextLine();
 
             try{
                 switch (option) {
@@ -34,28 +33,11 @@ public class App {
                     default:
                         throw new Exception("ERRO: opção digitada inválida!");
                 }
-                clear();
             } catch(Exception e){
                 sty.quadro(e.getMessage());
-                continuar();
-                clear();
             }
         } while(option != 0);
     }
 
     // Procedimento que pede confirmação para o usuário para então continuar com o programa:
-    public static void continuar(){
-        System.out.println("Pressione ENTER para continuar..");
-        sc.nextLine();
-    }
-
-    // Procedimento que limpa a tela:
-    public static void clear(){
-        for(int cont = 0; cont < 20; cont++){
-            System.out.println();
-        }
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
-        System.out.println("\n\n\n");
-    }
 }
