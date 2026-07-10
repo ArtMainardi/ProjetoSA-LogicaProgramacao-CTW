@@ -1,10 +1,10 @@
 package projetoSA;
 
 import java.util.Scanner;
-
 import projetoSA.repository.Dados;
 import projetoSA.util.EquipamentosMain;
 import projetoSA.util.Style;
+import projetoSA.util.TecnicosMain;
 
 public class Main {
     // Variáveis:
@@ -33,6 +33,11 @@ public class Main {
                         clear();
                         // Direciona para o bloco/menu dos equipamentos:
                         EquipamentosMain.equipamentos(dados, sty, sc);
+                        break;
+                    case 2:
+                        clear();
+                        // Direciona para o bloco/menu dos técnicos:
+                        TecnicosMain.tecnicos(dados, sty, sc);
                         break;
                     case 0:
                         break;

@@ -47,9 +47,10 @@ public class TecnicoRepository {
         for(Tecnico t : tecnicos){
             if(t.getMatricula().equals(matricula)){
                 id = t.getCodigo();
+                return readId(id);
             }
         }
-        return readId(id);
+        return null;
     }
 
     // UPDATE:

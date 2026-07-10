@@ -1,24 +1,27 @@
 package projetoSA.util;
 
 import java.util.Scanner;
+import projetoSA.Main;
+import projetoSA.model.Tecnico;
 import projetoSA.repository.Dados;
-import projetoSA.service.EquipamentoService;
+import projetoSA.service.TecnicoService;
 
 public class TecnicosMain {
     // Variáveis:
     static Dados d;
     static Style sty;
     static Scanner sc;
-    static EquipamentoService service;
+    static TecnicoService service;
 
     public static void tecnicos(Dados dados, Style style, Scanner scanner){
         // Define as variáveis da classe:
         d = dados;
         sty = style;
         sc = scanner;
-        service = new EquipamentoService(d);
+        service = new TecnicoService(d);
         // Outras variáveis:
         int option = -1;
+        Tecnico tec;
 
         // Menu de opções de técnicos:
         do {
@@ -37,6 +40,11 @@ public class TecnicosMain {
                 // Switch-case para analisar a resposta do usuário:
                 switch (option) {
                     case 1:
+                        tec = cadastrar();
+                        // Envia o objeto criado para o service:
+                        service.salvar(tec);
+                        sty.quadro("Técnico criado com sucesso!");
+                        Main.continuar();
                         break;
                     case 0: // Voltar
                         break;
@@ -47,5 +55,24 @@ public class TecnicosMain {
                 sty.quadro(e.getMessage());
             }
         } while (option != 0);
+    }
+
+    // Método que retorna novo Tecnico cadastrado:
+    public static Tecnico cadastrar(){
+        Main.clear();
+        sty.quadro("Cadastrar Técnico");
+
+        // Recebe dados:
+        System.out.print("Nome do novo técnico: ");
+        String nome = sc.nextLine();
+        System.out.print("Matrícula do novo técnico: ");
+        String matricula = sc.nextLine();
+        System.out.print("Setor desse técnico: ");
+        String setor = sc.nextLine();
+        System.out.print("Telefone dele: ");
+        String telefone = sc.nextLine();
+
+        // Retorna objeto criado:
+        return new Tecnico(nome, matricula, setor, telefone);
     }
 }
