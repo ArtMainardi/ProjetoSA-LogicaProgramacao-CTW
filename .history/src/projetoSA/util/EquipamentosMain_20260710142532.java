@@ -55,7 +55,7 @@ public class EquipamentosMain {
                         codigo = Integer.parseInt(sc.nextLine().trim());
                         // Envia a requisição para o service:
                         equip = service.buscarId(codigo);
-                        sty.quadro(equip.detalhes());
+                        sty.quadro(equip.getCodigo() + " | " + equip.getNome() + " | " + equip.getModelo() + " | " + equip.getStatus());
                         Main.continuar();
                         break;
                     case 3: // Atualizar equipamento:

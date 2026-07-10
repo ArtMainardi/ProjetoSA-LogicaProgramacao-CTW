@@ -91,7 +91,5 @@ public class Equipamento {
     }
 
     // Métodos:
-    public String detalhes(){
-        return codigo + " | " + nome + " | " + categoria + " | " + fabricante + " | " + modelo + " | " + setorInstalado + " | " + dataInstalacao + " | " + status;
-    }
+    public String 
 }
