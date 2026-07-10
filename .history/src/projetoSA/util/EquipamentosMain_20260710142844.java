@@ -55,8 +55,8 @@ public class EquipamentosMain {
                         codigo = Integer.parseInt(sc.nextLine().trim());
                         // Envia a requisição para o service:
                         equip = service.buscarId(codigo);
-                        sty.quadro("Codigo  |  Nome  |  Categoria  |  Fabricante  |  Modelo  |  Setor Instalado  |  Data Instalacao  |  Status");
-                        sty.lista(equip.detalhes());
+                        sty.quadro("Codigo  |  Nome  |  Categoria  |  Fabricante  |  Modelo  |  Setor Instalado  |  dataInstalacao  |  status");
+                        sty.quadro(equip.detalhes());
                         Main.continuar();
                         break;
                     case 3: // Atualizar equipamento:
@@ -155,9 +155,8 @@ public class EquipamentosMain {
 
     // Procedimento que coloca todos os dados na tela:
     public static void listar(List<Equipamento> equipamentos){
-        sty.quadro("Codigo  |  Nome  |  Categoria  |  Fabricante  |  Modelo  |  Setor Instalado  |  Data Instalacao  |  Status");
         for(Equipamento equip : equipamentos){
-            sty.lista(equip.detalhes());
+            sty.quadro(equip.detalhes());
             System.out.println(); // Espaçamento
         }
     }

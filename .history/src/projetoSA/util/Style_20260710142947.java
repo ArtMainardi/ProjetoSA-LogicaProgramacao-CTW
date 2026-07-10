@@ -22,13 +22,13 @@ public class Style {
     }
 
     // Procedimento que cria um item de uma lista:
-    public void lista(String frase){
+    public void quadro(String frase){
         // Tamanho da frase:
         int tmh = frase.length();
 
-        System.out.println("┌" + repetir("─", (tmh + 7)) + "┐");
-        System.out.println("│" + "  " + frase + repetir(" ", 5) + "│");
-        System.out.println("└" + repetir("─", (tmh + 7)) + "┘");
+        System.out.println("┌" + repetir("─", (tmh + 10)) + "┐");
+        System.out.println("│" + repetir(" ", 5) + frase + repetir(" ", 5) + "│");
+        System.out.println("└" + repetir("─", (tmh + 10)) + "┘");
     }
 
     // Método que retorna String repetida:

@@ -26,9 +26,9 @@ public class Style {
         // Tamanho da frase:
         int tmh = frase.length();
 
-        System.out.println("┌" + repetir("─", (tmh + 7)) + "┐");
-        System.out.println("│" + "  " + frase + repetir(" ", 5) + "│");
-        System.out.println("└" + repetir("─", (tmh + 7)) + "┘");
+        System.out.println("┌" + repetir("─", (tmh + 10)) + "┐");
+        System.out.println("│" + + frase + repetir(" ", 5) + "│");
+        System.out.println("└" + repetir("─", (tmh + 10)) + "┘");
     }
 
     // Método que retorna String repetida:
