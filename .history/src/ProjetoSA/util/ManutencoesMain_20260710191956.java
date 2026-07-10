@@ -67,17 +67,6 @@ public class ManutencoesMain {
                         Main.continuar();
                         break;
                     case 3: // Alterar situação da manutenção:
-                        Main.clear();
-                        sty.quadro("Alterar Situação da Manutenção");
-                        System.out.print("Digite o código da manutenção: ");
-                        codigo = Integer.parseInt(sc.nextLine().trim());
-                        // Envia a requisição para o service:
-                        m = service.buscarId(codigo);
-                        // Recebe novo status:
-                        String situacao = mudarSituacao();
-                        service.modificarStatus(codigo, situacao);
-                        sty.quadro("Manutenção atualizada com sucesso!");
-                        Main.continuar();
                         break;
                     case 0:
                         break;
@@ -126,26 +115,5 @@ public class ManutencoesMain {
 
         // Retorna objeto criado:
         return new Manutencao(equipamento, tecnico, dataAbertura, tipoManutencao, descricao, situacao);
-    }
-
-    // Método que retorna nova situação para manutenção:
-    public static String mudarSituacao() throws Exception{
-        String novaSituacao;
-        System.out.println("\nDigite uma opção para a nova situação da manutenção: \n"
-                        + "1- Aberta \n"
-                        + "2- Em andamento"
-        );
-        int option = Integer.parseInt(sc.nextLine().trim());
-        switch (option) {
-            case 1:
-                novaSituacao = "Aberta";
-                break;
-            case 2:
-                novaSituacao = "Em andamento";
-                break;
-            default:
-                throw new Exception("ERRO: opção digitada inválida!");
-        }
-        return novaSituacao;
     }
 }

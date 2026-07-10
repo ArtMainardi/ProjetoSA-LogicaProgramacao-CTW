@@ -133,15 +133,21 @@ public class ManutencaoService {
 
         // Verifica valores de 'situacao':
         Equipamento e = eService.buscarId(objeto.getEquipamento().getCodigo());
-        if(!objeto.getSituacao().equals("Finalizada")){
-            if(status.equals("Finalizada")){
+        if(objeto.getSituacao().equals("Finalizada"))
+        if(status.equals("Aberta")){
+            if(objeto.getSituacao().equals("Finalizada")){
+                // Verifica disponibilidade do 'equipamento':
+                if(e.getStatus().equals("Em manutencao")){
+                    throw new RuntimeException("ERRO: o equipamento informado já possui uma manutenção em aberto!");
+                }
                 // Atualiza status de 'equipamento':
-                e.setStatus("Operando");
-            } else if(!status.equals("Em andamento") && !status.equals("Aberta")){
-                throw new RuntimeException("ERRO: valor de 'situacao' inválido!");
+                e.setStatus("Em manutencao");
             }
-        } else{
-            throw new RuntimeException("ERRO: essa manutenção já foi finalizada!");
+        } else if(status.equals("Finalizada")){
+            // Atualiza status de 'equipamento':
+            e.setStatus("Operando");
+        } else if(!status.equals("Em andamento")){
+            throw new RuntimeException("ERRO: valor de 'situacao' inválido!");
         }
 
         // Faz a atualização:

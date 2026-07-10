@@ -77,7 +77,6 @@ public class ManutencoesMain {
                         String situacao = mudarSituacao();
                         service.modificarStatus(codigo, situacao);
                         sty.quadro("Manutenção atualizada com sucesso!");
-                        Main.continuar();
                         break;
                     case 0:
                         break;

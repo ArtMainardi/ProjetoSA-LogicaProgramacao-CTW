@@ -74,10 +74,8 @@ public class ManutencoesMain {
                         // Envia a requisição para o service:
                         m = service.buscarId(codigo);
                         // Recebe novo status:
-                        String situacao = mudarSituacao();
-                        service.modificarStatus(codigo, situacao);
-                        sty.quadro("Manutenção atualizada com sucesso!");
-                        Main.continuar();
+
+                        service.modificarStatus(codigo, "status");
                         break;
                     case 0:
                         break;
@@ -138,14 +136,10 @@ public class ManutencoesMain {
         int option = Integer.parseInt(sc.nextLine().trim());
         switch (option) {
             case 1:
-                novaSituacao = "Aberta";
-                break;
-            case 2:
-                novaSituacao = "Em andamento";
+                
                 break;
             default:
                 throw new Exception("ERRO: opção digitada inválida!");
         }
-        return novaSituacao;
     }
 }
