@@ -71,7 +71,7 @@ public class TecnicosMain {
                         // Envia a requisição para o service:
                         service.atualizar(tec, codigo);
                         sty.quadro("Técnico atualizado com sucesso!");
-                        Main.continuar();
+                    Main.continuar();
                         break;
                     case 4: // Excluir técnico pelo código:
                         Main.clear();

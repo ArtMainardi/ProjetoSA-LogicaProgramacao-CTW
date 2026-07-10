@@ -5,7 +5,7 @@ public class Manutencao {
     private Equipamento equipamento;
     private Tecnico tecnico;
     private String dataAbertura;
-    private String dataEncerramento = "--/--/----";
+    private String dataEncerramento;
     private String tipoManutencao; // (Preventiva ou Corretiva)
     private String descricao;
     private String situacao; // (Aberta, Em andamento ou Finalizada)
@@ -20,7 +20,7 @@ public class Manutencao {
         this.descricao = descricao;
         this.situacao = situacao;
     }
-    // Construtor com ID (recebe um objeto já criado da lista):
+    // Construtor com ID (recebe um objeto já criado da lista, com data de):
     public Manutencao(int codigo, Equipamento equipamento, Tecnico tecnico, String dataAbertura,
             String dataEncerramento, String tipoManutencao, String descricao, String situacao) {
         this.codigo = codigo;

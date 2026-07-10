@@ -46,7 +46,7 @@ public class TecnicosMain {
                         // Envia o objeto criado para o service:
                         service.salvar(tec);
                         sty.quadro("Técnico criado com sucesso!");
-                        Main.continuar();
+                    Main.continuar();
                         break;
                     case 2: // Consultar técnico pelo código:
                         Main.clear();
@@ -57,7 +57,7 @@ public class TecnicosMain {
                         tec = service.buscarId(codigo);
                         sty.titulo("Codigo | Nome | Matrícula | Setor | Telefone");
                         sty.lista(tec.detalhes());
-                        Main.continuar();
+                    Main.continuar();
                         break;
                     case 3: // Atualizar técnico:
                         Main.clear();
@@ -71,7 +71,7 @@ public class TecnicosMain {
                         // Envia a requisição para o service:
                         service.atualizar(tec, codigo);
                         sty.quadro("Técnico atualizado com sucesso!");
-                        Main.continuar();
+                    Main.continuar();
                         break;
                     case 4: // Excluir técnico pelo código:
                         Main.clear();

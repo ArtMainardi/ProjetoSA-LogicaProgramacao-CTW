@@ -38,7 +38,7 @@ public class ManutencaoService {
 
         // Verificar valores de 'tipoMovimentacao':
         if(!objeto.getTipoManutencao().equals("Preventiva") && !objeto.getTipoManutencao().equals("Corretiva")){
-            throw new RuntimeException("ERRO: valor de 'tipo de manutenção' inválido!");
+            throw new RuntimeException("ERRO: valor de 'tipo de manutençãp' inválido!");
         }
 
         // Verificar valores de 'situacao':
@@ -99,7 +99,7 @@ public class ManutencaoService {
 
         // Verificar valores de 'tipoMovimentacao':
         if(!modifiedManutencao.getTipoManutencao().equals("Preventiva") && !modifiedManutencao.getTipoManutencao().equals("Corretiva")){
-            throw new RuntimeException("ERRO: valor de 'tipo de manutenção' inválido!");
+            throw new RuntimeException("ERRO: valor de 'tipo de movimentação' inválido!");
         }
 
         // Verificar valores de 'situacao':

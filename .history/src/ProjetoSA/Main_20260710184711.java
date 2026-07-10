@@ -42,8 +42,8 @@ public class Main {
                         break;
                     case 3:
                         clear();
-                        // Direciona para o bloco/menu das manutenções:
-                        ManutencoesMain.manutencoes(dados, sty, sc);
+                        // Direciona para o bloco/menu das movimentações:
+                        ManutencoesMain.movimentacoes(dados, sty, sc);
                         break;
                     case 0:
                         break;
