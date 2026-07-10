@@ -84,9 +84,7 @@ public class EquipamentosMain {
                         break;
                     case 5: // Lista todos os equipamentos salvos:
                         // Envia a requisição para o service:
-                        List<Equipamento> equipamentos = service.listar();
-                        listar(equipamentos);
-                        Main.continuar();
+                        
                         break;
                     case 0:
                         break;
@@ -153,7 +151,7 @@ public class EquipamentosMain {
     }
 
     // Procedimento que coloca todos os dados na tela:
-    public static void listar(List<Equipamento> equipamentos){
+    public void listar(List<Equipamento> equipamentos){
         for(Equipamento equip : equipamentos){
             sty.quadro(equip.getCodigo() + " | " + equip.getNome() + " | " + equip.getModelo() + " | " + equip.getStatus());
             System.out.println(); // Espaçamento

@@ -85,8 +85,7 @@ public class EquipamentosMain {
                     case 5: // Lista todos os equipamentos salvos:
                         // Envia a requisição para o service:
                         List<Equipamento> equipamentos = service.listar();
-                        listar(equipamentos);
-                        Main.continuar();
+                        
                         break;
                     case 0:
                         break;

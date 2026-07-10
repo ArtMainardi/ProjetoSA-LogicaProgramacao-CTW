@@ -1,6 +1,5 @@
 package projetoSA.util;
 
-import java.util.List;
 import java.util.Scanner;
 import projetoSA.Main;
 import projetoSA.model.Equipamento;
@@ -82,11 +81,8 @@ public class EquipamentosMain {
                         sty.quadro("Equipamento deletado com sucesso!");
                         Main.continuar();
                         break;
-                    case 5: // Lista todos os equipamentos salvos:
-                        // Envia a requisição para o service:
-                        List<Equipamento> equipamentos = service.listar();
-                        listar(equipamentos);
-                        Main.continuar();
+                    case 5:
+
                         break;
                     case 0:
                         break;
@@ -152,11 +148,5 @@ public class EquipamentosMain {
         return new Equipamento(nome, categoria, fabricante, modelo, nsetorInstalado, dataInstalado, status);
     }
 
-    // Procedimento que coloca todos os dados na tela:
-    public static void listar(List<Equipamento> equipamentos){
-        for(Equipamento equip : equipamentos){
-            sty.quadro(equip.getCodigo() + " | " + equip.getNome() + " | " + equip.getModelo() + " | " + equip.getStatus());
-            System.out.println(); // Espaçamento
-        }
-    }
+    // Procedimento que lista todos os 
 }

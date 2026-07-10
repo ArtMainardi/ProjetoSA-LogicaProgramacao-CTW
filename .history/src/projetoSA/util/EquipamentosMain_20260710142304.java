@@ -86,7 +86,7 @@ public class EquipamentosMain {
                         // Envia a requisição para o service:
                         List<Equipamento> equipamentos = service.listar();
                         listar(equipamentos);
-                        Main.continuar();
+                        
                         break;
                     case 0:
                         break;
