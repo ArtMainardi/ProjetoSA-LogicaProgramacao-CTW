@@ -44,9 +44,9 @@ public class EquipamentoRepository {
     public Equipamento update(Equipamento modifiedEquipamento){
         // Procura pelo objeto:
         int id = modifiedEquipamento.getCodigo();
-        for(int cont = 0; cont < equipamentos.size(); cont++){
-            if(equipamentos.get(cont).getCodigo() == id){
-                equipamentos.set(cont, modifiedEquipamento);
+        for(Equipamento e : equipamentos){
+            if(e.getCodigo() == id){
+                e = modifiedEquipamento;
             }
         }
         return readId(id);

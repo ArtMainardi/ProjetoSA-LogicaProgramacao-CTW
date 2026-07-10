@@ -46,7 +46,7 @@ public class EquipamentoRepository {
         int id = modifiedEquipamento.getCodigo();
         for(int cont = 0; cont < equipamentos.size(); cont++){
             if(equipamentos.get(cont).getCodigo() == id){
-                equipamentos.set(cont, modifiedEquipamento);
+                equipamentos.get(cont) = modifiedEquipamento;
             }
         }
         return readId(id);
