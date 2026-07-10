@@ -45,7 +45,6 @@ public class TecnicosMain {
                         // Envia o objeto criado para o service:
                         service.salvar(tec);
                         sty.quadro("Técnico criado com sucesso!");
-                        Main.continuar();
                         break;
                     case 2: // Consultar técnico pelo código:
                         Main.clear();
@@ -56,13 +55,26 @@ public class TecnicosMain {
                         tec = service.buscarId(codigo);
                         sty.titulo("Codigo | Nome | Matrícula | Setor | Telefone");
                         sty.lista(tec.detalhes());
-                        Main.continuar();
+                        break;
+                    case 3: // Atualizar técnico:
+                        Main.clear();
+                        sty.quadro("Modificar Técnico");
+                        System.out.print("Digite o código do técnico: ");
+                        codigo = Integer.parseInt(sc.nextLine().trim());
+                        // Procura o técnico pelo service:
+                        tec = service.buscarId(codigo);
+                        // Recebe novos dados:
+                        tec = atualizar(tec);
+                        // Envia a requisição para o service:
+                        service.atualizar(tec, codigo);
+                        sty.quadro("Técnico atualizado com sucesso!");
                         break;
                     case 0: // Voltar
                         break;
                     default:
                         throw new Exception("ERRO: opção digitada inválida!");
                 }
+                Main.continuar();
                 Main.clear();
             } catch (Exception e) {
                 sty.quadro(e.getMessage());
@@ -85,6 +97,25 @@ public class TecnicosMain {
         System.out.print("Setor desse técnico: ");
         String setor = sc.nextLine();
         System.out.print("Telefone dele: ");
+        String telefone = sc.nextLine();
+
+        // Retorna objeto criado:
+        return new Tecnico(nome, matricula, setor, telefone);
+    }
+
+    // Método que retorna 'Tecnico' com os novos dados para atualizar um técnico:
+    public static Tecnico atualizar(Tecnico t){
+        Main.clear();
+        sty.quadro("Atualizar Técnico");
+
+        // Recebe dados:
+        System.out.print("Nome: " + t.getNome() + " -> ");
+        String nome = sc.nextLine();
+        System.out.print("Matrícula: " + t.getMatricula() + " -> ");
+        String matricula = sc.nextLine();
+        System.out.print("Setor: " + t.getSetor() + " -> ");
+        String setor = sc.nextLine();
+        System.out.print("Telefone: " + t.getTelefone() + " -> ");
         String telefone = sc.nextLine();
 
         // Retorna objeto criado:

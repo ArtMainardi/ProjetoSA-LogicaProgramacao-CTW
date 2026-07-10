@@ -77,7 +77,8 @@ public class TecnicoService {
         }
 
         // Verificando uniquidade de 'matricula':
-        if(repository.readMatricula(newTecnico.getMatricula()).getCodigo() != id){
+        Tecnico t = repository.readMatricula(newTecnico.getMatricula());
+        if(t != null && t.getCodigo() != id){
             throw new RuntimeException("ERRO: já existe um técnico com essa matrícula!");
         }
 

@@ -3,6 +3,11 @@ package projetoSA.util;
 public class Style {
     // Procedimento que cria um quadro com um texto no centro:
     public void quadro(String frase){
+        // Verifica integridade de 'frase':
+        if(frase == null){
+            frase = "ERRO";
+        }
+
         // Tamanho da frase:
         int tmh = frase.length();
 
@@ -13,6 +18,11 @@ public class Style {
 
     // Procedimento que cria um título:
     public void titulo(String frase){
+        // Verifica integridade de 'frase':
+        if(frase == null){
+            frase = "ERRO";
+        }
+
         // Tamanho da frase:
         int tmh = frase.length();
 
@@ -23,6 +33,11 @@ public class Style {
 
     // Procedimento que cria um item de uma lista:
     public void lista(String frase){
+        // Verifica integridade de 'frase':
+        if(frase == null){
+            frase = "ERRO";
+        }
+        
         // Tamanho da frase:
         int tmh = frase.length();
 
