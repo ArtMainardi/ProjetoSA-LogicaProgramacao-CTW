@@ -56,9 +56,9 @@ public class TecnicoRepository {
     public Tecnico update(Tecnico modifiedTecnico){
         // Procura pelo técnico:
         int id = modifiedTecnico.getCodigo();
-        for(Tecnico t : tecnicos){
-            if(t.getCodigo() == id){
-                t = modifiedTecnico;
+        for(int cont = 0; cont < tecnicos.size(); cont++){
+            if(tecnicos.get(cont).getCodigo() == id){
+                tecnicos.set(cont, modifiedTecnico);
             }
         }
         return readId(id);
