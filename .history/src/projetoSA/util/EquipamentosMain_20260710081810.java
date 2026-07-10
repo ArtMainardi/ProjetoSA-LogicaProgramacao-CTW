@@ -75,13 +75,13 @@ public class EquipamentosMain {
         String categoria = sc.nextLine();
         System.out.print("Fabricante dele: ");
         String fabricante = sc.nextLine();
-        System.out.print("Modelo do novo equipamento: ");
+        System.out.print("Digite o modelo do novo equipamento: ");
         String modelo = sc.nextLine();
-        System.out.print("Setor onde foi instalado: ");
+        System.out.print("Digite o seu setor onde foi instalado: ");
         String nsetorInstalado = sc.nextLine();
-        System.out.print("Data em que foi instalado (DD/MM/AAAA): ");
+        System.out.print("Digite a data em que foi instalado (DD/MM/AAAA): ");
         String dataInstalado = sc.nextLine();
-        System.out.print("Status desse equipamento ('Operando', 'Em manutenção' ou 'Inativo'): ");
+        System.out.print("Digite o status desse equipamento: ");
         String status = sc.nextLine();
 
         // Retorna objeto criado:

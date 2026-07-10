@@ -4,21 +4,18 @@ import java.util.Scanner;
 import projetoSA.Main;
 import projetoSA.model.Equipamento;
 import projetoSA.repository.Dados;
-import projetoSA.service.EquipamentoService;
 
 public class EquipamentosMain {
     // Variáveis:
     static Dados d;
     static Style sty;
     static Scanner sc;
-    static EquipamentoService service;
 
     public static void equipamentos(Dados dados, Style style, Scanner scanner){
         // Define as variáveis da classe:
         d = dados;
         sty = style;
         sc = scanner;
-        service = new EquipamentoService(d);
 
         // Menu de opções: 
         int option;
@@ -38,16 +35,7 @@ public class EquipamentosMain {
             // Switch-case com try-catch para analisar a resposta do usuário:
             try{
                 switch (option) {
-                    case 1: // Cadastrar um novo equipamento:
-                        Equipamento novoEquipamento = cadastrar();
-                        // Envia o objeto criado para o service:
-                        try{
-                            service.adicionar(novoEquipamento);
-                            sty.quadro("Equipamento criado com sucesso!");
-                        } catch(Exception e){
-                            sty.quadro(e.getMessage());
-                        }
-                        Main.continuar();
+                    case 1:
                         break;
                     case 0:
                         break;
@@ -68,23 +56,8 @@ public class EquipamentosMain {
         Main.clear();
         sty.quadro("Cadastrar Equipamento");
 
-        // Recebe dados:
-        System.out.print("Nome do novo equipamento: ");
+        // Define 
+        System.out.print("Digite o nome do novo equipamento: ");
         String nome = sc.nextLine();
-        System.out.print("Categoria dele: ");
-        String categoria = sc.nextLine();
-        System.out.print("Fabricante dele: ");
-        String fabricante = sc.nextLine();
-        System.out.print("Modelo do novo equipamento: ");
-        String modelo = sc.nextLine();
-        System.out.print("Setor onde foi instalado: ");
-        String nsetorInstalado = sc.nextLine();
-        System.out.print("Data em que foi instalado (DD/MM/AAAA): ");
-        String dataInstalado = sc.nextLine();
-        System.out.print("Status desse equipamento ('Operando', 'Em manutenção' ou 'Inativo'): ");
-        String status = sc.nextLine();
-
-        // Retorna objeto criado:
-        return new Equipamento(nome, categoria, fabricante, modelo, nsetorInstalado, dataInstalado, status);
     }
 }
