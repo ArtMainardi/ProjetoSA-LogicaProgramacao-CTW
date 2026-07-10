@@ -1,5 +1,6 @@
 package projetoSA.util;
 
+import java.util.List;
 import java.util.Scanner;
 import projetoSA.Main;
 import projetoSA.model.Tecnico;
@@ -82,6 +83,12 @@ public class TecnicosMain {
                         sty.quadro("Técnico deletado com sucesso!");
                         Main.continuar();
                         break;
+                    case 5: // Lista todos os técnicos salvos:
+                        // Envia a requisição para o service:
+                        List<Tecnico> tecnicos = service.listar();
+                        listar(tecnicos);
+                        Main.continuar();
+                        break;
                     case 0: // Voltar
                         break;
                     default:
@@ -132,5 +139,14 @@ public class TecnicosMain {
 
         // Retorna objeto criado:
         return new Tecnico(nome, matricula, setor, telefone);
+    }
+
+    // Procedimento que coloca todos os dados na tela:
+    public static void listar(List<Tecnico> tecnicos){
+        sty.titulo("Codigo | Nome | Matrícula | Setor | Telefone");
+        for(Tecnico tec : tecnicos){
+            sty.lista(tec.detalhes());
+            System.out.println(); // Espaçamento
+        }
     }
 }
