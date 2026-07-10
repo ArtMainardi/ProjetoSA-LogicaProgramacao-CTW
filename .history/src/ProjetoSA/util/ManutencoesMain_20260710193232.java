@@ -80,16 +80,7 @@ public class ManutencoesMain {
                         Main.continuar();
                         break;
                     case 4: // Finalizar manutenção:
-                        Main.clear();
-                        sty.quadro("Finalizar Manutenção");
-                        System.out.print("Digite o código da manutenção: ");
-                        codigo = Integer.parseInt(sc.nextLine().trim());
-                        // Verifica se essa manutenção existe:
-                        m = service.buscarId(codigo);
-                        // Recebe novo status:
-                        service.modificarStatus(codigo, "Finalizada");
-                        sty.quadro("Manutenção finalizada com sucesso!");
-                        Main.continuar();
+                        
                         break;
                     case 0:
                         break;

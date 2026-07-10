@@ -87,9 +87,6 @@ public class ManutencoesMain {
                         // Verifica se essa manutenção existe:
                         m = service.buscarId(codigo);
                         // Recebe novo status:
-                        service.modificarStatus(codigo, "Finalizada");
-                        sty.quadro("Manutenção finalizada com sucesso!");
-                        Main.continuar();
                         break;
                     case 0:
                         break;
