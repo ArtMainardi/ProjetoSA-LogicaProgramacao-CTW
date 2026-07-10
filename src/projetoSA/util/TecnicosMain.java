@@ -22,6 +22,7 @@ public class TecnicosMain {
         // Outras variáveis:
         int option = -1;
         Tecnico tec;
+        int codigo;
 
         // Menu de opções de técnicos:
         do {
@@ -39,11 +40,22 @@ public class TecnicosMain {
 
                 // Switch-case para analisar a resposta do usuário:
                 switch (option) {
-                    case 1:
+                    case 1: // Cadastrar um novo técnico:
                         tec = cadastrar();
                         // Envia o objeto criado para o service:
                         service.salvar(tec);
                         sty.quadro("Técnico criado com sucesso!");
+                        Main.continuar();
+                        break;
+                    case 2: // Consultar técnico pelo código:
+                        Main.clear();
+                        sty.quadro("Consultar Técnico");
+                        System.out.print("Digite o código do técnico: ");
+                        codigo = Integer.parseInt(sc.nextLine().trim());
+                        // Envia a requisição para o service:
+                        tec = service.buscarId(codigo);
+                        sty.titulo("Codigo | Nome | Matrícula | Setor | Telefone");
+                        sty.lista(tec.detalhes());
                         Main.continuar();
                         break;
                     case 0: // Voltar
@@ -51,8 +63,11 @@ public class TecnicosMain {
                     default:
                         throw new Exception("ERRO: opção digitada inválida!");
                 }
+                Main.clear();
             } catch (Exception e) {
                 sty.quadro(e.getMessage());
+                Main.continuar();
+                Main.clear();
             }
         } while (option != 0);
     }

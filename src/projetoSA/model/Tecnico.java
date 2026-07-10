@@ -58,4 +58,9 @@ public class Tecnico {
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
+
+    // Métodos:
+    public String detalhes(){
+        return codigo + " | " + nome + " | " + matricula + " | " + setor + " | " + telefone;
+    }
 }
