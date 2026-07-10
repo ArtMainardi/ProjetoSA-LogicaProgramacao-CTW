@@ -3,7 +3,6 @@ package projetoSA;
 import java.util.Scanner;
 
 import projetoSA.repository.Dados;
-import projetoSA.util.EquipamentosMain;
 import projetoSA.util.Style;
 
 public class Main {
@@ -32,8 +31,7 @@ public class Main {
                 switch (option) {
                     case 1:
                         clear();
-                        // Direciona para o bloco/menu dos equipamentos:
-                        EquipamentosMain.equipamentos(dados, sty, sc);
+                        EquipamentoMain
                         break;
                     case 0:
                         break;

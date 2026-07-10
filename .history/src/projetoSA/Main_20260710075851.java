@@ -32,7 +32,6 @@ public class Main {
                 switch (option) {
                     case 1:
                         clear();
-                        // Direciona para o bloco/menu dos equipamentos:
                         EquipamentosMain.equipamentos(dados, sty, sc);
                         break;
                     case 0:
