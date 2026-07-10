@@ -8,15 +8,15 @@ import projetoSA.model.Tecnico;
 public class Dados {
     // Equipamentos:
     private ArrayList<Equipamento> equipamentos = new ArrayList<>();
-    private int eNextId[] = {0};
+    private int eNextId[] = {1};
 
     // Técnicos:
     private ArrayList<Tecnico> tecnicos = new ArrayList<>();
-    private int tNextId[] = {0};
+    private int tNextId[] = {1};
 
     // Manutenções:
     private ArrayList<Manutencao> manutencoes = new ArrayList<>();
-    private int mNextId[] = {0};
+    private int mNextId[] = {1};
 
 
     // Getters e Setters:
