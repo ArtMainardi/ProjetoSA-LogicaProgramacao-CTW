@@ -79,19 +79,9 @@ public class Relatorio {
         int qtdManutencao = 0, qtdAtivos = 0, qtdInativos = 0;
         try {
             List<Equipamento> equipamentos = eService.listar();
-            for(Equipamento e : equipamentos){
-                if(e.getStatus().equals("Em manutencao")){
-                    qtdManutencao++;
-                }
-                if(e.getStatus().equals("Operando")){
-                    qtdAtivos++;
-                }
-                if(e.getStatus().equals("Inativo")){
-                    qtdInativos++;
-                }
-            }
         } catch (Exception e) {
         }
+        
         // Atualiza equipamentos em manutenção:
         equipManutencao = qtdManutencao;
         // Atualiza equipamentos ativos:

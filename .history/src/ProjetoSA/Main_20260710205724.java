@@ -51,7 +51,7 @@ public class Main {
                         ManutencoesMain.manutencoes(dados, sty, sc, relatorio);
                         break;
                     case 4:
-                        mostrarRelatorio();
+                        
                         break;
                     case 0:
                         break;
@@ -89,15 +89,7 @@ public class Main {
 
         clear();
         sty.titulo("Relatório");
-        System.out.println("Total de equipamentos cadastrados: " + relatorio.getQtdEquipamentos());
-        System.out.println("Total de técnicos cadastrados: " + relatorio.getQtdTecnicos());
-        System.out.println("Equipamentos em manutenção: " + relatorio.getEquipManutencao());
-        System.out.println("Equipamentos ativos: " + relatorio.getEquipAtivos());
-        System.out.println("Equipamentos inativos: " + relatorio.getEquipInativos());
-        System.out.println("Quantidade de manutenções abertas: " + relatorio.getManAbertas());
-        System.out.println("Quantidade de manutenções finalizadas: " + relatorio.getManFinalizadas());
-
-        System.out.println(); // Espaçamento
-        continuar();
+        System.out.println("Quantidade total de equipamentos cadastrados: " + relatorio.getQtdEquipamentos());
+        System.out.println("Total de técnicos cadastrados; : " + relatorio.getQtdEquipamentos());
     }
 }

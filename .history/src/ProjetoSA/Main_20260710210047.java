@@ -97,7 +97,6 @@ public class Main {
         System.out.println("Quantidade de manutenções abertas: " + relatorio.getManAbertas());
         System.out.println("Quantidade de manutenções finalizadas: " + relatorio.getManFinalizadas());
 
-        System.out.println(); // Espaçamento
         continuar();
     }
 }

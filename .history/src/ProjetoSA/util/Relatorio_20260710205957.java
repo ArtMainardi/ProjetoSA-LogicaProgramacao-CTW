@@ -76,21 +76,18 @@ public class Relatorio {
         EquipamentoService eService = new EquipamentoService(dados);
         ManutencaoService mService = new ManutencaoService(dados);
         
+        List<Equipamento> equipamentos = eService.listar();
         int qtdManutencao = 0, qtdAtivos = 0, qtdInativos = 0;
-        try {
-            List<Equipamento> equipamentos = eService.listar();
-            for(Equipamento e : equipamentos){
-                if(e.getStatus().equals("Em manutencao")){
-                    qtdManutencao++;
-                }
-                if(e.getStatus().equals("Operando")){
-                    qtdAtivos++;
-                }
-                if(e.getStatus().equals("Inativo")){
-                    qtdInativos++;
-                }
+        for(Equipamento e : equipamentos){
+            if(e.getStatus().equals("Em manutencao")){
+                qtdManutencao++;
             }
-        } catch (Exception e) {
+            if(e.getStatus().equals("Operando")){
+                qtdAtivos++;
+            }
+            if(e.getStatus().equals("Inativo")){
+                qtdInativos++;
+            }
         }
         // Atualiza equipamentos em manutenção:
         equipManutencao = qtdManutencao;
@@ -101,16 +98,16 @@ public class Relatorio {
 
         int qtdAberta = 0, qtdFinalizadas = 0;
         try {
-            List<Manutencao> manutencoes = mService.listar();
-            for(Manutencao m : manutencoes){
-                if(m.getSituacao().equals("Aberta")){
-                    qtdAberta++;
-                }
-                if(m.getSituacao().equals("Finalizada")){
-                    qtdFinalizadas++;
-                }
-            }
+            
         } catch (Exception e) {
+        }
+        for(Manutencao m : manutencoes){
+            if(m.getSituacao().equals("Aberta")){
+                qtdAberta++;
+            }
+            if(m.getSituacao().equals("Finalizada")){
+                qtdFinalizadas++;
+            }
         }
         // Atualiza quantidade de manutenções abertas
         manAbertas = qtdAberta;

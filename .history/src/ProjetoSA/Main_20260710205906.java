@@ -51,7 +51,7 @@ public class Main {
                         ManutencoesMain.manutencoes(dados, sty, sc, relatorio);
                         break;
                     case 4:
-                        mostrarRelatorio();
+                        mostrarRelatorio()
                         break;
                     case 0:
                         break;
@@ -96,8 +96,5 @@ public class Main {
         System.out.println("Equipamentos inativos: " + relatorio.getEquipInativos());
         System.out.println("Quantidade de manutenções abertas: " + relatorio.getManAbertas());
         System.out.println("Quantidade de manutenções finalizadas: " + relatorio.getManFinalizadas());
-
-        System.out.println(); // Espaçamento
-        continuar();
     }
 }

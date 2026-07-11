@@ -76,22 +76,12 @@ public class Relatorio {
         EquipamentoService eService = new EquipamentoService(dados);
         ManutencaoService mService = new ManutencaoService(dados);
         
+        List<Equipamento> equipamentos = eService.listar();
         int qtdManutencao = 0, qtdAtivos = 0, qtdInativos = 0;
-        try {
-            List<Equipamento> equipamentos = eService.listar();
-            for(Equipamento e : equipamentos){
-                if(e.getStatus().equals("Em manutencao")){
-                    qtdManutencao++;
-                }
-                if(e.getStatus().equals("Operando")){
-                    qtdAtivos++;
-                }
-                if(e.getStatus().equals("Inativo")){
-                    qtdInativos++;
-                }
-            }
-        } catch (Exception e) {
+        if(!equipamentos.isEmpty()){
+
         }
+        
         // Atualiza equipamentos em manutenção:
         equipManutencao = qtdManutencao;
         // Atualiza equipamentos ativos:
@@ -99,9 +89,9 @@ public class Relatorio {
         // Atualiza equipamentos inativos:
         equipInativos = qtdInativos;
 
+        List<Manutencao> manutencoes = mService.listar();
         int qtdAberta = 0, qtdFinalizadas = 0;
-        try {
-            List<Manutencao> manutencoes = mService.listar();
+        if(!manutencoes.isEmpty()){
             for(Manutencao m : manutencoes){
                 if(m.getSituacao().equals("Aberta")){
                     qtdAberta++;
@@ -110,7 +100,6 @@ public class Relatorio {
                     qtdFinalizadas++;
                 }
             }
-        } catch (Exception e) {
         }
         // Atualiza quantidade de manutenções abertas
         manAbertas = qtdAberta;
