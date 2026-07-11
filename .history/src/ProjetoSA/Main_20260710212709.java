@@ -60,15 +60,11 @@ public class Main {
                         throw new SwitchCaseException("ERRO: opção digitada inválida!");
                 }
                 clear();
-            } catch(SwitchCaseException e){
-                sty.quadro(e.getMessage());
-                continuar();
-                clear();
-            } catch(Exception e){
-                sty.quadro(e.getMessage());
-                continuar();
-                clear();
-            }
+                } catch(NumberFormatException | SwitchCaseException e){
+                    sty.quadro(e.getMessage());
+                    continuar();
+                    clear();
+                }
         } while(option != 0);
     }
 

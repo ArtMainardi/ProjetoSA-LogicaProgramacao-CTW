@@ -64,7 +64,7 @@ public class Main {
                 sty.quadro(e.getMessage());
                 continuar();
                 clear();
-            } catch(Exception e){
+            } catch(SwitchCaseException e){
                 sty.quadro(e.getMessage());
                 continuar();
                 clear();
