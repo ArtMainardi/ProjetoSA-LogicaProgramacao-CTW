@@ -64,10 +64,6 @@ public class Main {
                 sty.quadro(e.getMessage());
                 continuar();
                 clear();
-            } catch(Exception e){
-                sty.quadro(e.getMessage());
-                continuar();
-                clear();
             }
         } while(option != 0);
     }
