@@ -40,15 +40,7 @@ public class ManutencaoRepository {
     }
 
     // READ QUANTITY (MANUTENCAO):
-    public int readManutencao(int id){
-        int qtd = 0;
-        for(Manutencao m : manutencoes){
-            if(m.getEquipamento().getCodigo() == id){
-                qtd++;
-            }
-        }
-        return qtd;
-    }
+    public int readManutencao(int id)
 
     // UPDATE:
     public Manutencao update(Manutencao modifiedManutencao){

@@ -125,11 +125,13 @@ public class Relatorio {
 
         // Mostra na tela todos os equipamentos e a quantidade de manutenções de cada um: 
         List<Equipamento> equipamentos = eService.listar();
-        int qtd = 0;
-        for(Equipamento e : equipamentos){
-            qtd = 0;
-            qtd = mRepository.readManutencao(e.getCodigo());
-            System.out.println("Código: " + e.getCodigo() + " | Nome: " + e.getNome() + " | Qtd Manutenções: " + qtd);
-        }
+        for(Manutencao m : manutencoes){
+                if(m.getSituacao().equals("Aberta")){
+                    qtdAberta++;
+                }
+                if(m.getSituacao().equals("Finalizada")){
+                    qtdFinalizadas++;
+                }
+            }
     }
 }

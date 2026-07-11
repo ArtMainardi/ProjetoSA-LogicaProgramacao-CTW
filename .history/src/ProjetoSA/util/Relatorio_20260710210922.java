@@ -128,7 +128,7 @@ public class Relatorio {
         int qtd = 0;
         for(Equipamento e : equipamentos){
             qtd = 0;
-            qtd = mRepository.readManutencao(e.getCodigo());
+            qtd = mre
             System.out.println("Código: " + e.getCodigo() + " | Nome: " + e.getNome() + " | Qtd Manutenções: " + qtd);
         }
     }

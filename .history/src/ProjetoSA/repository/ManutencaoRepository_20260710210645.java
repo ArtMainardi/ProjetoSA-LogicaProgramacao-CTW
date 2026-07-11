@@ -44,10 +44,9 @@ public class ManutencaoRepository {
         int qtd = 0;
         for(Manutencao m : manutencoes){
             if(m.getEquipamento().getCodigo() == id){
-                qtd++;
+                qtd
             }
         }
-        return qtd;
     }
 
     // UPDATE:

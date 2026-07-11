@@ -47,7 +47,7 @@ public class ManutencaoRepository {
                 qtd++;
             }
         }
-        return qtd;
+        return 
     }
 
     // UPDATE:

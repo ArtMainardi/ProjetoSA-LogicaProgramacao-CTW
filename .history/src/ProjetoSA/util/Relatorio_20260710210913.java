@@ -127,8 +127,6 @@ public class Relatorio {
         List<Equipamento> equipamentos = eService.listar();
         int qtd = 0;
         for(Equipamento e : equipamentos){
-            qtd = 0;
-            qtd = mRepository.readManutencao(e.getCodigo());
             System.out.println("Código: " + e.getCodigo() + " | Nome: " + e.getNome() + " | Qtd Manutenções: " + qtd);
         }
     }

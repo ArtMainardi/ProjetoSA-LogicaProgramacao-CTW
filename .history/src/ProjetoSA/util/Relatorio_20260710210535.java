@@ -4,7 +4,6 @@ import java.util.List;
 import projetoSA.model.Equipamento;
 import projetoSA.model.Manutencao;
 import projetoSA.repository.Dados;
-import projetoSA.repository.ManutencaoRepository;
 import projetoSA.service.EquipamentoService;
 import projetoSA.service.ManutencaoService;
 
@@ -121,15 +120,8 @@ public class Relatorio {
 
     public void manPorEquip(Style sty){
         EquipamentoService eService = new EquipamentoService(dados);
-        ManutencaoRepository mRepository = new ManutencaoRepository(dados);
+        ManutencaoService mService = new ManutencaoService(dados);
 
-        // Mostra na tela todos os equipamentos e a quantidade de manutenções de cada um: 
-        List<Equipamento> equipamentos = eService.listar();
-        int qtd = 0;
-        for(Equipamento e : equipamentos){
-            qtd = 0;
-            qtd = mRepository.readManutencao(e.getCodigo());
-            System.out.println("Código: " + e.getCodigo() + " | Nome: " + e.getNome() + " | Qtd Manutenções: " + qtd);
-        }
+        
     }
 }

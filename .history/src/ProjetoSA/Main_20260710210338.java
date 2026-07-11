@@ -96,12 +96,10 @@ public class Main {
         System.out.println("Equipamentos inativos: " + relatorio.getEquipInativos());
         System.out.println("Quantidade de manutenções abertas: " + relatorio.getManAbertas());
         System.out.println("Quantidade de manutenções finalizadas: " + relatorio.getManFinalizadas());
-        System.out.println(); // Espaçamento
 
         // Mostrar quantidade de manutenções por equipamento:
         System.out.println("Pressione ENTER para mostrar a quantidade de manutenções por equipamento: ");
         sc.nextLine();
-        relatorio.manPorEquip(sty);
 
         System.out.println(); // Espaçamento
         continuar();
